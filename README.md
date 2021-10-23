@@ -1,2 +1,2 @@
 # MotorMain
-A rider one-stop application
+A rider one-stop web application
