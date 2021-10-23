@@ -97,3 +97,19 @@ body {
 @media only screen and (max-width: 600px) {
     .specsSticky {position: absolute;}
 }
+
+/* Login Page */
+    .form-group {
+        position: auto;
+        margin: auto;  
+        text-align: center;
+    }
+
+    .navbar-nav {
+        padding-left: 60%;
+    }
+    
+/* Sing In Page  */
+    .navbar-nav {
+        padding-left: 60%;
+}
