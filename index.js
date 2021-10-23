@@ -10,3 +10,9 @@
         document.getElementById("main").style.marginLeft = "15%";
         }
     }
+
+// alert message when sign out
+    function signOut(){
+        alert("You have been successfully logged out!")
+    }
+
