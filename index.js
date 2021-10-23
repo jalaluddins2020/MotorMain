@@ -4,6 +4,7 @@
         if (document.getElementById("mySidebar").style.width == "15%") {
             document.getElementById("mySidebar").style.width = "0";
             document.getElementById("main").style.marginLeft = "0";
+            document.getElementById("main").style.width = "60%"
         }
         else {
         document.getElementById("mySidebar").style.width = "15%";
