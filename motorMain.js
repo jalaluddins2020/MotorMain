@@ -5,13 +5,11 @@ Vue.createApp({
             bikeInfo:  
                 { 
                     mileage : (snapshot.val()).users.username.bikeInfo.mileage,
-                    year : (snapshot.val()).users.username.bikeInfo.year,
-                    make : (snapshot.val()).users.username.bikeInfo.make,
                     model : (snapshot.val()).users.username.bikeInfo.model,
                     lastMaintenanceDate : (snapshot.val()).users.username.bikeInfo.lastMaintenanceDate,
-                    upcomingMaintenanceDate :"function",
-                    recentMaintenanceType: (snapshot.val()).users.username.bikeInfo.recentMaintenanceType,
-                    upcomingMaintenanceType: "function",
+                    upcomingMaintenanceDate :(snapshot.val()).users.username.bikeInfo.upcomingMaintenanceDate,
+                    recentMaintenanceService: (snapshot.val()).users.username.bikeInfo.recentMaintenanceService,
+                    upcomingMaintenanceService: (snapshot.val()).users.username.bikeInfo.upcomingMaintenanceService,
                     image: (snapshot.val()).users.username.bikeInfo.image,
                     specs : {
                         engineCC: (snapshot.val()).users.username.bikeInfo.specs.engineCC,
@@ -19,8 +17,10 @@ Vue.createApp({
                         horsePower: (snapshot.val()).users.username.bikeInfo.specs.horsePower,
                         torque: (snapshot.val()).users.username.bikeInfo.specs.torque,
                         weight: (snapshot.val()).users.username.bikeInfo.specs.weight,
-                    }     
+                    }              
                 },
+            shortDescription: (snapshot.val()).users.username.shortDescription,
+            joinDate: (snapshot.val()).users.username.joinDate
         }
     },
 }).mount('#app')
