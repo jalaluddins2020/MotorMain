@@ -25,7 +25,11 @@
 
     // Update Current Mileage/Date
     function updateCr() {
-        var newMileage = Number(prompt("Enter new Mileage"));
+        var newMileage = Number(prompt("Enter new mileage (km) "));
+        while (newMileage == "") {
+            newMileage = Number(prompt("Please enter new mileage (km) "));
+        }
+
         var intDate = prompt("Enter date of service (dd/mm/yyy) (if today, leave empty)");
         
         while ((intDate[2] != "/" || intDate[5] != "/") && intDate != "") {
@@ -53,7 +57,11 @@
 
     // Update eo Mileage/Date
     function updateEo() {
-        var newMileage = Number(prompt("Enter new Mileage"));
+        var newMileage = Number(prompt("Enter new mileage (km) "));
+        while ( newMileage == "") {
+            newMileage = Number(prompt("Please enter new mileage (km) "));
+        }
+
         var intDate = prompt("Enter date of service (dd/mm/yyy) (if today, leave empty)");
         
         while ((intDate[2] != "/" || intDate[5] != "/") && intDate != "") {
@@ -82,11 +90,15 @@
 
     // Update sp Mileage/Date
     function updateSp() {
-        var newMileage = Number(prompt("Enter new Mileage"));
+        var newMileage = Number(prompt("Enter new mileage (km) "));
+        while ( newMileage == "") {
+            newMileage = Number(prompt("Please enter new mileage (km) "));
+        }
+
         var intDate = prompt("Enter date of service (dd/mm/yyy) (if today, leave empty)");
         
         while ((intDate[2] != "/" || intDate[5] != "/") && intDate != "") {
-            intDate = prompt("Enter date of service (dd/mm/yyy) (if today, leave empty)");
+            intDate = prompt("Please enter date of service (dd/mm/yyy) (if today, leave empty)");
         }
 
         if (intDate == "") {
