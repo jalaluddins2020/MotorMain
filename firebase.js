@@ -43,6 +43,39 @@
                           }
                   }
               },
+
+              computed: {
+                nextEoMile(){
+                  return this.bikeInfo.eoMile + Number((snapshot.val()).eochange.model.r1)
+                },
+                nextEoDate(){
+                  var dateArray = this.bikeInfo.eoDate.split("/")
+                  var convertedDate = dateArray[1] + "/" + dateArray[0] + "/" + dateArray[2]
+                  var dateObj = new Date(convertedDate)
+                  dateObj.setMonth(dateObj.getMonth() + 3)
+                  var dd = dateObj.getDate()
+                  var mm = dateObj.getMonth() + 1
+                  var yyyy = dateObj.getFullYear()
+                  return (dd+"/"+mm+"/"+yyyy)
+                },
+                nextSpMile(){
+                  /*
+                  return this.bikeInfo.spMile + Number((snapshot.val()).spchange.model.r1)
+                  */
+                },
+                nextSpDate(){
+                  /*
+                  var dateArray = this.bikeInfo.spDate.split("/")
+                  var convertedDate = dateArray[1] + "/" + dateArray[0] + "/" + dateArray[2]
+                  var dateObj = new Date(convertedDate)
+                  dateObj.setMonth(dateObj.getMonth() + 3)
+                  var dd = dateObj.getDate()
+                  var mm = dateObj.getMonth() + 1
+                  var yyyy = dateObj.getFullYear()git 
+                  return (dd+"/"+mm+"/"+yyyy)
+                  */
+                },
+              }
           }).mount('#main')
             
         }

@@ -77,15 +77,43 @@
                             <td><button type="button" class="btn btn-primary btn-sm" onclick="updateSp()">Update</button></td>
                             <!-- put js/onlick - give prompts and update-->
                           </tr>
-                          <tr>
-                            <td colspan="4">
-                                <a href="#" class="btn btn-primary">Add different type of service</a>
-                            </td>
-                          </tr>
+
                         </tbody>
                       </table>
                       
               </div>
+
+              <!--Recommended servicing mileage table-->
+              <h6 class="card-text text-center">Recommended Servicing Information</h6>
+              <div class = "info-main my-3"> 
+                <table class="table">
+                    <tbody>
+
+                        <tr>
+                            <th scope="row" style="color: rgb(221, 0, 0);">Type of Service</th>
+                            <th>Mileage (Km)</th>
+                            <th>Date</th>
+                            <!-- put js/onlick - give prompts and update-->
+                        </tr>
+
+                      <tr>
+                        <th scope="row" style="color: rgb(221, 0, 0);">Engine Oil Service:</th>
+                        <td>{{nextEoMile}}</td>
+                        <td>{{nextEoDate}}</td>
+                        <!-- put js/onlick - give prompts and update-->
+                      </tr>
+
+
+                      <tr>
+                        <th scope="row">Spark Plug Service:</th>
+                        <td>{{bikeInfo.spMile}}</td>
+                        <!-- put js/onlick - give prompts and update-->
+                      </tr>
+
+                    </tbody>
+                  </table>
+                  
+          </div>
         </div>
         
       </div>
