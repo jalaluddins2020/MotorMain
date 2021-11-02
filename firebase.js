@@ -24,7 +24,6 @@
         var username = "u1";
         var ref = firebase.database().ref();
         ref.on("value", function(snapshot) {
-            console.log(snapshot.val());
             Vue.createApp({
               data(){
                   return {
