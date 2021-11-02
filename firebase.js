@@ -49,3 +49,5 @@
         , function (error) {
             console.log("Error: " + error.code);
         });
+
+console.log(firebase.auth().currentUser)
