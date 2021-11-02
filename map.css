@@ -1,0 +1,15 @@
+#map {
+    height: 50%;
+    width: 70%;
+  }
+
+#displayCarParkOnMap {
+    height: 50%;
+    width: 50%;
+}
+  
+  /* Optional: Makes the sample page fill the window. */
+  html,
+  body {
+    height: 100%;
+  }

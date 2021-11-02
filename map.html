@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <link rel="stylesheet" type="text/css" href="map.css" />
+
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- Weather info section -->
+
+    <h1>Weather information</h1>
+    <div>
+        <div>
+            <button type="button" id="resetWeatherBtn">&#8634;</button>
+        </div>
+        <div id="result">Weather info goes here</div>
+    </div>
+
+    <script>
+        window.onload = function(event) {
+            getWeatherWithCoordinates();
+        }   
+    </script>
+    <br>
+
+    <!-- General map (traffic and car park) section -->
+    
+    <h1>Traffic information</h1>
+    <p>Traffic density around you</p>
+    <div>
+        <button type="button" id="resetTrafficMapBtn">Reset Map</button>
+        <button type="button" id="trafficToggle">Toggle Traffic Layer</button>
+    </div>
+    <div id="map"></div>
+    
+    <!-- Parking lots info/location -->
+
+    <h1>List of parking lots</h1>
+    <div>
+        <button type="button" id="getCarParkBtn">Get Car Parks</button>
+        <button type="button" id="getRoute">Calculate route to car park</button>
+    </div>
+    <div id="displayCarParks">
+        <h3>Parking lots in your area</h3>
+        
+    </div>
+
+    <!-- End of page -->
+    <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZ8LDprSmp3bGC56bQWkOo9-Y6_9WvXeI&callback=initMap&v=weekly"
+    async
+    ></script>
+    <script src="map.js"></script>
+
+</body>
+</html>
