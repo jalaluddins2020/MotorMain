@@ -53,8 +53,8 @@
                   var convertedDate = dateArray[1] + "/" + dateArray[0] + "/" + dateArray[2]
                   var dateObj = new Date(convertedDate)
                   dateObj.setMonth(dateObj.getMonth() + 3)
-                  var dd = dateObj.getDate()
-                  var mm = dateObj.getMonth() + 1
+                  var dd = String(dateObj.getDate()).padStart(2,0)
+                  var mm = String(dateObj.getMonth() + 1).padStart(2,0)
                   var yyyy = dateObj.getFullYear()
                   return (dd+"/"+mm+"/"+yyyy)
                 },
