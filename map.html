@@ -6,18 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-
-    <link rel="stylesheet" type="text/css" href="map.css" />
     <title>View Map</title>
+
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" 
     integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" 
     crossorigin="anonymous">
 
+    <link rel="stylesheet" type="text/css" href="main.css" />
+
 </head>
 <body>
     <!-- Weather info section -->
 
+<div class="container" id="weather">
     <h1>Weather information</h1>
     <div>
         <div>
@@ -26,15 +28,18 @@
         <div id="result">Weather info goes here</div>
     </div>
 
+
     <script>
         window.onload = function(event) {
             getWeatherWithCoordinates();
         }   
     </script>
+</div>
     <br>
 
     <!-- General map (traffic and car park) section -->
-    
+
+<div class="container"></div>
     <h1>Traffic information</h1>
     <p>Traffic density around you</p>
     <div>
@@ -42,7 +47,7 @@
         <button type="button" id="trafficToggle">Toggle Traffic Layer</button>
     </div>
     <div id="map"></div>
-    
+    <br>
     <!-- Parking lots info/location -->
 
     <h1>List of parking lots</h1>
@@ -54,6 +59,7 @@
         <h3>Parking lots in your area</h3>
         
     </div>
+
 
     <!-- End of page -->
     <script
