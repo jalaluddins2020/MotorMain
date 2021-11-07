@@ -35,6 +35,7 @@ function showPosition(position) {
 getLocation();
 
 function getWeatherWithCoordinates(){
+    getCarpark();
     axios.get(url, {
         params: {
             lat: latitude, 
@@ -67,14 +68,13 @@ function getWeatherWithCoordinates(){
 }
 
 /* Traffic map */
-
 function initMap() {
     //console.log(latitude, longitude)
 
     const map = new google.maps.Map(document.getElementById("map"), {
-      zoom: 15,
-      center: { lat: latitude, lng: longitude},
-      mapTypeControl: false,
+    zoom: 15,
+    center: { lat: latitude, lng: longitude},
+    mapTypeControl: false,
     });
 
     const image =
@@ -99,7 +99,6 @@ function initMap() {
     }
 
 }
-
 
 /* Parking lot info section */
 
@@ -143,9 +142,9 @@ function getCarpark() {
             let address = carpark.formatted_address;
             let status = carpark.business_status;
             outputHTML += `<tr>
+                           <td><button type="button" onclick="displayCarParkOnMap(${counter})">Show on map</button></td>
                            <td>${name}</td>
-                           <td>${address}</td>
-                           <td><button type="button" onclick="displayCarParkOnMap(${counter})">Show on map</button></td></tr>`;
+                           <td>${address}</td></tr>`;
             counter += 1;
 
             //Longitude and latitude for map generating
@@ -157,14 +156,16 @@ function getCarpark() {
             carParkInformationList.push([name, address, status]);
         } 
 
-        outputHTML += "</table>"
+        outputHTML += "</table>20 Car Parks Found"
 
-        displayCarparkEle.innerHTML += outputHTML;
+        displayCarparkEle.innerHTML = outputHTML;
         displayCarparkEle.style.display = "block";
 
     })
     .catch(error => {
-        console.log(error.message);
+        outputHTML = "<br><br><b>...Please enable location/CORS for car parks<b>";
+        displayCarparkEle.innerHTML = outputHTML;
+        displayCarparkEle.style.display = "block";
     })
 }
 
@@ -193,6 +194,7 @@ function displayCarParkOnMap(index){
 }
 
 function initMapCarPark() {
+    document.getElementById("map").style = "none";
     const map = new google.maps.Map(document.getElementById("map"), {
         zoom: 15,
         center: { lat: carParkLat, lng: carParkLon },
@@ -268,6 +270,21 @@ function initMapCarPark() {
       }
       
 
+}
+
+/* Nav bar */
+
+function navOpenClose() {
+    if (document.getElementById("mySidebar").style.width == "15%") {
+        document.getElementById("mySidebar").style.width = "0";
+        document.getElementById("main").style.marginLeft = "0";
+        document.getElementById("main").style.width = "100%"
+    }
+    else {
+    document.getElementById("mySidebar").style.width = "15%";
+    document.getElementById("main").style.marginLeft = "15%";
+    document.getElementById("main").style.width = "85%"
+    }
 }
 
 
