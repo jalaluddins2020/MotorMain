@@ -1,4 +1,13 @@
 var uid = sessionStorage.getItem("uid");
+console.log(document.location.href)
+console.log(uid)
+if (uid != null) {
+    if (document.location.href == "http://localhost/MotorMain/login.html") {
+        window.location.href = "dashboard.html";
+    } else if (document.location.href == "http://localhost/MotorMain/index.html" || document.location.href == "http://localhost/MotorMain/") {
+        window.location.href = "dashboard.html";
+    }
+}
 // nav bar open close
     function navOpenClose() {
         if (document.getElementById("mySidebar").style.width == "15%") {
@@ -15,6 +24,8 @@ var uid = sessionStorage.getItem("uid");
 
 // alert message when sign out
     function signOut(){
+        sessionStorage.clear();
+        window.location.href = "index.html";
         alert("You have been successfully logged out!")
     }
 
