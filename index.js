@@ -1,4 +1,4 @@
-
+var uid = sessionStorage.getItem("uid");
 // nav bar open close
     function navOpenClose() {
         if (document.getElementById("mySidebar").style.width == "15%") {
@@ -46,7 +46,8 @@
             var newDate = intDate;
         }
 
-        var ref = firebase.database().ref("users/u1/bikeInfo");
+        // var toRefer = "users/" + uid + "/bikeInfo"
+        var ref = firebase.database().ref("users/" + uid + "/bikeInfo");
 
         ref.update ({
         "crMile": newMileage,
@@ -78,9 +79,10 @@
             var newDate = intDate;
         }
 
-        var ref = firebase.database().ref("users/u1/bikeInfo");
-
+        var ref = firebase.database().ref("users/" + uid + "/bikeInfo");
         ref.update ({
+        "crMile": newMileage,
+        "crDate": newDate,
         "eoMile": newMileage,
         "eoDate" : newDate
         });
@@ -111,9 +113,11 @@
             var newDate = intDate;
         }
 
-        var ref = firebase.database().ref("users/u1/bikeInfo");
+        var ref = firebase.database().ref("users/" + uid + "/bikeInfo");
 
         ref.update ({
+        "crMile": newMileage,
+        "crDate": newDate,
         "spMile": newMileage,
         "spDate" : newDate
         });
