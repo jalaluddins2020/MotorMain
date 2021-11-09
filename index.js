@@ -1,5 +1,13 @@
 var uid = sessionStorage.getItem("uid");
-
+console.log(document.location.href)
+console.log(uid)
+if (uid != null) {
+    if (document.location.href == "http://localhost/MotorMain/login.html") {
+        window.location.href = "dashboard.html";
+    } else if (document.location.href == "http://localhost/MotorMain/index.html" || document.location.href == "http://localhost/MotorMain/") {
+        window.location.href = "dashboard.html";
+    }
+}
 // nav bar open close
     function navOpenClose() {
         if (document.getElementById("mySidebar").style.width == "15%") {

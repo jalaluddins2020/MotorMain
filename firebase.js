@@ -29,16 +29,7 @@
     else {
       var uid = sessionStorage.getItem("uid");
     }
-        // uid.replace("\\n", "")
-        // var uid = "";
-        // var alpn = "abcdefghijklmnopqrstuvwxyz123456789";
-        // for (let i = 0; i < uidTemp.length; i++) {
-        //   if (alpn.includes(uidTemp[i].toLowerCase())) {
-        //     uid += uidTemp[i];
-        //   }
-        // }
 
-        console.log(uid);
         var ref = firebase.database().ref();
         ref.on("value", function(snapshot) {
             var uid2 = sessionStorage.getItem("uid");
