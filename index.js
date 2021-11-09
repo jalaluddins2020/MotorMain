@@ -1,4 +1,5 @@
 var uid = sessionStorage.getItem("uid");
+
 // nav bar open close
     function navOpenClose() {
         if (document.getElementById("mySidebar").style.width == "15%") {
@@ -15,6 +16,8 @@ var uid = sessionStorage.getItem("uid");
 
 // alert message when sign out
     function signOut(){
+        sessionStorage.clear();
+        window.location.href = "index.html";
         alert("You have been successfully logged out!")
     }
 
