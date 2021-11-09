@@ -90,6 +90,16 @@
         }
         , function (error) {
             console.log("Error: " + error.code);
+            document.getElementById("error").innerHTML= 
+            `<div class = 'row mt-5'>
+                <div class = 'col-6 mx-auto'>
+                    <h1>Oops, you weren't supposed to see this!</h1>
+                    <p class = 'text-center'>Click <a href = 'login.html'>here</a> to return to the login page</p>
+                    <div class = 'text-center'>
+                    <img src = 'sadface.jpg' class = 'img-fluid w-50 h-auto'>
+                    </div>
+                </div>
+            </div>`
         });
 
 
