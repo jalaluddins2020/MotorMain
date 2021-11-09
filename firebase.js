@@ -21,25 +21,43 @@
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
 
-        var username = "u1";
+    // getting uid from session
+    if (sessionStorage.getItem("uid") == "") {
+      sessionStorage.clear();
+      window.location.href = "index.html";
+    }
+    else {
+      var uid = sessionStorage.getItem("uid");
+    }
+        // uid.replace("\\n", "")
+        // var uid = "";
+        // var alpn = "abcdefghijklmnopqrstuvwxyz123456789";
+        // for (let i = 0; i < uidTemp.length; i++) {
+        //   if (alpn.includes(uidTemp[i].toLowerCase())) {
+        //     uid += uidTemp[i];
+        //   }
+        // }
+
+        console.log(uid);
         var ref = firebase.database().ref();
         ref.on("value", function(snapshot) {
+            var uid2 = sessionStorage.getItem("uid");
             Vue.createApp({
               data(){
                   return {
-                      name: (snapshot.val()).users[username].name,
+                      name: (snapshot.val()).users[uid].name,
                       bikeInfo:  
                           { 
-                              mileage : (snapshot.val()).users[username].bikeInfo.mileage,
-                              year : (snapshot.val()).users[username].bikeInfo.Year,
-                              make : (snapshot.val()).users[username].bikeInfo.Make,
-                              model : (snapshot.val()).users[username].bikeInfo.Model,
-                              crMile : (snapshot.val()).users[username].bikeInfo.crMile,
-                              crDate : (snapshot.val()).users[username].bikeInfo.crDate,
-                              eoMile : (snapshot.val()).users[username].bikeInfo.eoMile,
-                              eoDate : (snapshot.val()).users[username].bikeInfo.eoDate,
-                              spMile : (snapshot.val()).users[username].bikeInfo.spMile,
-                              spDate : (snapshot.val()).users[username].bikeInfo.spDate
+                              mileage : (snapshot.val()).users[uid].bikeInfo.mileage,
+                              year : (snapshot.val()).users[uid].bikeInfo.Year,
+                              make : (snapshot.val()).users[uid].bikeInfo.Make,
+                              model : (snapshot.val()).users[uid].bikeInfo.Model,
+                              crMile : (snapshot.val()).users[uid].bikeInfo.crMile,
+                              crDate : (snapshot.val()).users[uid].bikeInfo.crDate,
+                              eoMile : (snapshot.val()).users[uid].bikeInfo.eoMile,
+                              eoDate : (snapshot.val()).users[uid].bikeInfo.eoDate,
+                              spMile : (snapshot.val()).users[uid].bikeInfo.spMile,
+                              spDate : (snapshot.val()).users[uid].bikeInfo.spDate
                           }
                   }
               },
@@ -83,4 +101,4 @@
             console.log("Error: " + error.code);
         });
 
-console.log(firebase.auth().currentUser)
+

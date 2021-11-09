@@ -83,6 +83,8 @@ var uiConfig = {
       // User successfully signed in.
       // Return type determines whether we continue the redirect automatically
       // or whether we leave that to developer to handle.
+      var uid = firebase.auth().currentUser.uid;
+      sessionStorage.setItem("uid", uid);
       return true;
     },
     uiShown: function() {
@@ -111,6 +113,8 @@ var uiConfig = {
 
 // The start method will wait until the DOM is loaded.
 ui.start('#firebaseui-auth-container', uiConfig);
+
+
 
 </script>
     <script src="index.js"></script>
