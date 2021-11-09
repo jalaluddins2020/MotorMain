@@ -186,3 +186,27 @@ transition: opacity .2s;
     background: #04AA6D;
     cursor: pointer;
 }
+
+
+/*Map Page*/
+#map {
+    height: 100%;
+    width: 66%;
+    float: right;
+    padding-top: 30%;
+
+}
+
+table{
+    overflow-y:scroll; 
+    height:300px; 
+    display:block;   
+}
+
+/*Settings*/
+.formDiv
+{
+    position: auto;
+    margin: auto;  
+    text-align: center;
+}
