@@ -36,6 +36,8 @@ function signOut(){
 // Sign Out
 // var users = JSON.parse((sessionStorage.getItem("users")));
 // console.log(users)
+console.log(sessionStorage.getItem("shopList"))
+
 
 // Vue for Dashboard servicing details
 Vue.createApp({
@@ -43,22 +45,20 @@ Vue.createApp({
               return {
                   name: sessionStorage.getItem("name"),
                   bikeInfo:  
-                        { 
-                            year : sessionStorage.getItem("year"),
-                            make : sessionStorage.getItem("make"),
-                            model : sessionStorage.getItem("model"),
-                            crMile : sessionStorage.getItem("crMile"),
-                            crDate : sessionStorage.getItem("crDate"),
-                            eoMile : sessionStorage.getItem("eoMile"),
-                            eoDate : sessionStorage.getItem("eoDate"),
-                            spMile : sessionStorage.getItem("spMile"),
-                            spDate : sessionStorage.getItem("spDate")
-                        },
-                schedule: {
-                            // eoChangeDate : sessionStorage.getItem("eoChangeDate"),
-                            // spChangeDate : sessionStorage.getItem("spChangeDate"),
-                            // spChangeMile : sessionStorage.getItem("spChangeMile")
-                        }
+
+                      { 
+                          year : sessionStorage.getItem("year"),
+                          make : sessionStorage.getItem("make"),
+                          model : sessionStorage.getItem("model"),
+                          crMile : sessionStorage.getItem("crMile"),
+                          crDate : sessionStorage.getItem("crDate"),
+                          eoMile : sessionStorage.getItem("eoMile"),
+                          eoDate : sessionStorage.getItem("eoDate"),
+                          spMile : sessionStorage.getItem("spMile"),
+                          spDate : sessionStorage.getItem("spDate")
+                      },
+                  shopList: sessionStorage.getItem("shopList")
+
               }
           },
           computed: {

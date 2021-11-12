@@ -47,6 +47,8 @@
             sessionStorage.setItem("spChangeDate", (snapshot.val()).schedule.sp.spChangeDate)
             sessionStorage.setItem("spChangeMile", (snapshot.val()).schedule.sp.spChangeMile)
             sessionStorage.setItem("user", JSON.stringify((snapshot.val()).users))
+            sessionStorage.setItem("shopList", JSON.stringify(snapshot.val()).shopList)
+            console.log((snapshot.val()).shopList)
         }, function (error) {
             console.log("Error: " + error.code);
             document.getElementById("error").innerHTML= 
