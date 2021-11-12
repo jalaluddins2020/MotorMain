@@ -1,18 +1,10 @@
 var uid = sessionStorage.getItem("uid")
-
 if (uid == null) {
     sessionStorage.clear();
     window.location.href = "index.html";
 }
 
-var username = sessionStorage.getItem("name")
-var year = sessionStorage.getItem("year")
-var make = sessionStorage.getItem("make")
-var model = sessionStorage.getItem("model")
 
-if (username == null || year == null || make == null || model == null) {
-    window.location.href = "profile.html";
-}
 
 // Script to open and close sidebar
 function w3_open() {
