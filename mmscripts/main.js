@@ -45,7 +45,6 @@ Vue.createApp({
               return {
                   name: sessionStorage.getItem("name"),
                   bikeInfo:  
-
                       { 
                           year : sessionStorage.getItem("year"),
                           make : sessionStorage.getItem("make"),
@@ -63,7 +62,8 @@ Vue.createApp({
           },
           computed: {
             nextEoMile(){
-            //   return this.bikeInfo.eoMile + Number((snapshot.val()).eochange.model.r1)
+                var toAdd = sessionStorage.getItem("eoChangeMile")
+              return Number(this.bikeInfo.eoMile) + Number(toAdd)
             },
             nextEoDate(){
               var eoNext = 3
@@ -77,7 +77,8 @@ Vue.createApp({
               return (dd+"/"+mm+"/"+yyyy)
             },
             nextSpMile(){
-              return Number(this.bikeInfo.spMile) + 15000
+            var toAdd = sessionStorage.getItem("spChangeMile")
+              return Number(this.bikeInfo.spMile) + Number(toAdd)
             },
             nextSpDate(){
               var spNext = 12

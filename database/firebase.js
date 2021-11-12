@@ -43,6 +43,7 @@
             sessionStorage.setItem("eoDate", (snapshot.val()).users[uid].bikeInfo.eoDate)
             sessionStorage.setItem("spMile", (snapshot.val()).users[uid].bikeInfo.spMile)
             sessionStorage.setItem("spDate", (snapshot.val()).users[uid].bikeInfo.spDate)
+            sessionStorage.setItem("eoChangeMile", (snapshot.val()).schedule.eo.eoChangeMile)
             sessionStorage.setItem("eoChangeDate", (snapshot.val()).schedule.eo.eoChangeDate)
             sessionStorage.setItem("spChangeDate", (snapshot.val()).schedule.sp.spChangeDate)
             sessionStorage.setItem("spChangeMile", (snapshot.val()).schedule.sp.spChangeMile)
