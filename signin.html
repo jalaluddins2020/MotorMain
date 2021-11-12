@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+<!-- follow the steps from https://firebase.google.com/docs/auth/web/firebaseui -->
+<!-- the following should be in the head tag -->        
+<script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" 
+integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" 
+crossorigin="anonymous">
+<script src="mmscripts/sessionIn.js"></script>
+<link rel="stylesheet" href="mmstyles/style.css">
+</head>
+<body>
+
+
+<h1 class="text-center w3-text-red">Sign in to <b>MotorMain</b></h1>
+<p class="text-center">Get your servicing schedule now!</p>
+
+<!--Start of Login Form-->
+<div class='container'>
+    <div class="row">
+        <div class="col">
+            <form>
+                <br><!--To insert logo here-->
+                <div class="form-group">
+                  <div id="firebaseui-auth-container"></div>
+                  <div id="loader">Loading...</div>
+              </form>
+        </div>
+    </div>
+</div>
+
+<a href="index.html" class="w3-button w3-red w3-display-bottommiddle" style="width:50%;font-size:2vw;">Back</a>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script> 
+<!-- This is the authentication API from Firebase Realtime Database -->
+<!-- <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>  -->
+<script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
+<!-- This is the API from Firebase Authentication -->
+<script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
+<!-- Firebase Module -->
+<script type="module" src="database/loginfirebase.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" 
+integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" 
+crossorigin="anonymous"></script>
+
+<div id = "error"></div>
+</body>
+</html>
