@@ -34,6 +34,8 @@ function signOut(){
 }
 
 // Sign Out
+console.log(sessionStorage.getItem("shopList"))
+
 
 // Vue for Dashboard servicing details
 Vue.createApp({
@@ -51,7 +53,8 @@ Vue.createApp({
                           eoDate : sessionStorage.getItem("eoDate"),
                           spMile : sessionStorage.getItem("spMile"),
                           spDate : sessionStorage.getItem("spDate")
-                      }
+                      },
+                  shopList: sessionStorage.getItem("shopList")
               }
           },
 

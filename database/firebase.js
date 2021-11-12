@@ -43,6 +43,8 @@
             sessionStorage.setItem("eoDate", (snapshot.val()).users[uid].bikeInfo.eoDate)
             sessionStorage.setItem("spMile", (snapshot.val()).users[uid].bikeInfo.spMile)
             sessionStorage.setItem("spDate", (snapshot.val()).users[uid].bikeInfo.spDate)
+            sessionStorage.setItem("shopList", JSON.stringify(snapshot.val()).shopList)
+            console.log((snapshot.val()).shopList)
         }, function (error) {
             console.log("Error: " + error.code);
             document.getElementById("error").innerHTML= 
