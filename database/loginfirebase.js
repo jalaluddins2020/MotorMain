@@ -42,6 +42,7 @@ var uiConfig = {
       // Return type determines whether we continue the redirect automatically
       // or whether we leave that to developer to handle.
       var uid = firebase.auth().currentUser.uid;
+      sessionStorage.setItem("count", 1);
       sessionStorage.setItem("uid", uid);
       return true;
     },

@@ -43,6 +43,10 @@
             sessionStorage.setItem("eoDate", (snapshot.val()).users[uid].bikeInfo.eoDate)
             sessionStorage.setItem("spMile", (snapshot.val()).users[uid].bikeInfo.spMile)
             sessionStorage.setItem("spDate", (snapshot.val()).users[uid].bikeInfo.spDate)
+            sessionStorage.setItem("eoChangeMile", (snapshot.val()).schedule.eo.eoChangeMile)
+            sessionStorage.setItem("eoChangeDate", (snapshot.val()).schedule.eo.eoChangeDate)
+            sessionStorage.setItem("spChangeDate", (snapshot.val()).schedule.sp.spChangeDate)
+            sessionStorage.setItem("spChangeMile", (snapshot.val()).schedule.sp.spChangeMile)
         }, function (error) {
             console.log("Error: " + error.code);
             document.getElementById("error").innerHTML= 
@@ -56,5 +60,25 @@
                 </div>
             </div>`
         });
+        
+        var shop = "shop";
+        var num = 0; 
 
-
+        var query = firebase.database().ref("shopList").orderByKey();
+        query.once("value")
+          .then(function(snapshot) {
+            snapshot.forEach(function(childSnapshot) {
+              num ++
+              // key will be "ada" the first time and "alan" the second time
+              var key = childSnapshot.key;
+              // childData will be the actual contents of the child
+              var childData = childSnapshot.val();
+              // console.log(childData)
+              var shopNum = shop + num;
+              var name = childData.Name
+              var address = childData.Address;
+              var coords = childData.Coordinates;
+              var shopDetails = [name,"+", address,"+", coords];
+              sessionStorage.setItem(shopNum, shopDetails);
+          });
+        });
