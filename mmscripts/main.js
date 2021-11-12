@@ -34,6 +34,8 @@ function signOut(){
 }
 
 // Sign Out
+// var users = JSON.parse((sessionStorage.getItem("users")));
+// console.log(users)
 
 // Vue for Dashboard servicing details
 Vue.createApp({
@@ -41,52 +43,54 @@ Vue.createApp({
               return {
                   name: sessionStorage.getItem("name"),
                   bikeInfo:  
-                      { 
-                          year : sessionStorage.getItem("year"),
-                          make : sessionStorage.getItem("make"),
-                          model : sessionStorage.getItem("model"),
-                          crMile : sessionStorage.getItem("crMile"),
-                          crDate : sessionStorage.getItem("crDate"),
-                          eoMile : sessionStorage.getItem("eoMile"),
-                          eoDate : sessionStorage.getItem("eoDate"),
-                          spMile : sessionStorage.getItem("spMile"),
-                          spDate : sessionStorage.getItem("spDate")
-                      }
+                        { 
+                            year : sessionStorage.getItem("year"),
+                            make : sessionStorage.getItem("make"),
+                            model : sessionStorage.getItem("model"),
+                            crMile : sessionStorage.getItem("crMile"),
+                            crDate : sessionStorage.getItem("crDate"),
+                            eoMile : sessionStorage.getItem("eoMile"),
+                            eoDate : sessionStorage.getItem("eoDate"),
+                            spMile : sessionStorage.getItem("spMile"),
+                            spDate : sessionStorage.getItem("spDate")
+                        },
+                schedule: {
+                            // eoChangeDate : sessionStorage.getItem("eoChangeDate"),
+                            // spChangeDate : sessionStorage.getItem("spChangeDate"),
+                            // spChangeMile : sessionStorage.getItem("spChangeMile")
+                        }
               }
           },
-
-        //   computed: {
-        //     nextEoMile(){
-        //       return this.bikeInfo.eoMile + Number((snapshot.val()).eochange.model.r1)
-        //     },
-        //     nextEoDate(){
-        //       var dateArray = this.bikeInfo.eoDate.split("/")
-        //       var convertedDate = dateArray[1] + "/" + dateArray[0] + "/" + dateArray[2]
-        //       var dateObj = new Date(convertedDate)
-        //       dateObj.setMonth(dateObj.getMonth() + 3)
-        //       var dd = String(dateObj.getDate()).padStart(2,0)
-        //       var mm = String(dateObj.getMonth() + 1).padStart(2,0)
-        //       var yyyy = dateObj.getFullYear()
-        //       return (dd+"/"+mm+"/"+yyyy)
-        //     },
-        //     nextSpMile(){
-        //       /*
-        //       return this.bikeInfo.spMile + Number((snapshot.val()).spchange.model.r1)
-        //       */
-        //     },
-        //     nextSpDate(){
-        //       /*
-        //       var dateArray = this.bikeInfo.spDate.split("/")
-        //       var convertedDate = dateArray[1] + "/" + dateArray[0] + "/" + dateArray[2]
-        //       var dateObj = new Date(convertedDate)
-        //       dateObj.setMonth(dateObj.getMonth() + 3)
-        //       var dd = dateObj.getDate()
-        //       var mm = dateObj.getMonth() + 1
-        //       var yyyy = dateObj.getFullYear()git 
-        //       return (dd+"/"+mm+"/"+yyyy)
-        //       */
-        //     },
-        //   }
+          computed: {
+            nextEoMile(){
+            //   return this.bikeInfo.eoMile + Number((snapshot.val()).eochange.model.r1)
+            },
+            nextEoDate(){
+              var eoNext = 3
+              var dateArray = this.bikeInfo.eoDate.split("/")
+              var convertedDate = dateArray[1] + "/" + dateArray[0] + "/" + dateArray[2]
+              var dateObj = new Date(convertedDate)
+              dateObj.setMonth(dateObj.getMonth() + eoNext)
+              var dd = String(dateObj.getDate()).padStart(2,0)
+              var mm = String(dateObj.getMonth() + 1).padStart(2,0)
+              var yyyy = dateObj.getFullYear()
+              return (dd+"/"+mm+"/"+yyyy)
+            },
+            nextSpMile(){
+              return Number(this.bikeInfo.spMile) + 15000
+            },
+            nextSpDate(){
+              var spNext = 12
+              var dateArray = this.bikeInfo.spDate.split("/")
+              var convertedDate = dateArray[1] + "/" + dateArray[0] + "/" + dateArray[2]
+              var dateObj = new Date(convertedDate)
+              dateObj.setMonth(dateObj.getMonth() + spNext)
+              var dd = dateObj.getDate()
+              var mm = dateObj.getMonth() + 1
+              var yyyy = dateObj.getFullYear() 
+              return (dd+"/"+mm+"/"+yyyy)
+            },
+          }
       }).mount('#main')
 // END of Vue for dashboard servicing details
 
