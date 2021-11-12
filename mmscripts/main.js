@@ -1,9 +1,10 @@
 var uid = sessionStorage.getItem("uid")
-
 if (uid == null) {
     sessionStorage.clear();
     window.location.href = "index.html";
 }
+
+
 
 // Script to open and close sidebar
 function w3_open() {
@@ -194,3 +195,4 @@ function updateSp() {
     });
     location.reload();
   }
+
