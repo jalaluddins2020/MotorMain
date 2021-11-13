@@ -14,52 +14,48 @@ rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5
 <body>
 <!-- Sidebar -->
 <nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:200px;font-weight:bold;" id="mySidebar"><br>
-  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
-  <div class="w3-container">
-    <h3 class="w3-padding-64"><b>MotorMain</b></h3>
-  </div>
-  <div class="w3-bar-block">
-    <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Dashboard</a> 
-    <a href="map.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Map</a> 
-    <a href="faq.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">FAQ</a> 
-  </div>
-  <div class="dropdown">
-    <img src="./assets/s1k.jpg" alt="" width="40" height="37" class="rounded-circle dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="margin-top: 375px">
-    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-      <li><a class="dropdown-item" href="profile.html">Profile</a></li>
-      <li><a class="dropdown-item" href="settings.html">Settings</a></li>
-      <li><button class="dropdown-item" onclick = "signOut()">Sign out</button></li>
-    </ul>
-  </div>
-</nav>
-
-<!-- Sidebar becomes - Top menu on small screens -->
-<header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
-  <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">☰</a>
-  <span>MotorMain</span>
-</header>
-
-<!-- Overlay effect when opening sidebar on small screens -->
-<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
-
-<!-- !PAGE CONTENT! -->
-<div class="w3-main" style="margin-left:240px;margin-right:40px">
+    <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+    <div class="w3-container">
+      <div class="col" id="nameSide">
+        <h5>Welcome, {{namePrint}}!</h5>
+      </div>
+      <img src="assets/mmLogo2.png" style="width:130px;">
+      <!-- <h3 class="w3-padding-64"><b>MotorMain</b></h3> -->
+    </div>
+    <div class="w3-bar-block">
+      <a href="dashboard.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Dashboard</a> 
+      <a href="map.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Map</a> 
+      <a href="faq.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">FAQ</a> 
+      <a href="contact.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Contact Us</a>
+      <a href="review.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Review Us</a>
+    </div>
+    <div class="dropdown col" id="dropdown" style="position: absolute;bottom: 20px;">
+      <img src="assets/mmRider2.jpg" alt="" width="50" height="47" class="rounded-circle dropdown-toggle dropdown" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+      
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <li><a class="dropdown-item" href="profile.html">Profile</a></li>
+        <li><a class="dropdown-item" href="settings.html">Settings</a></li>
+        <li><button class="dropdown-item" onclick = "signOut()">Sign out</button></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <!-- Sidebar becomes - Top menu on small screens -->
+  <header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
+    <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">☰</a>
+    <span>MotorMain</span>
+  </header>
+  
+  <!-- Overlay effect when opening sidebar on small screens -->
+  <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+  
+  <!-- !PAGE CONTENT! -->
+  <div class="w3-main" style="margin-left:240px;margin-right:40px">
+<br>
+<br>
 <br>
 
-<div class="container container-fluid" style="padding-bottom: 20px;">
-    <ul class="nav nav-tabs" style=" margin-top:10px">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="settings.html">Edit Personal Information</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="contact.html">Contact Us</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="review.html">Leave a Review</a>
-        </li>
-      </ul>
-</div>
-
+<div class="p-5 mb-4 bg-light rounded-3" id="contactUs">
                 <div class="slidecontainer">
                     <div class="row">
                         <div class="col-md-8 mx-auto">
@@ -96,8 +92,8 @@ rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5
                     <button type="button" class="btn btn-success">Submit Review</button>
                 </div>
             </div>
-
-    <script src="/MotorMain/jsFiles/index.js"></script>
+</div>
+    <script src="mmscripts/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" 
     integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" 
     crossorigin="anonymous"></script>
