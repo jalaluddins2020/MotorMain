@@ -40,11 +40,29 @@ function signOut(){
 
 
 
+Vue.createApp({
+    data(){
+        return {
+            name: sessionStorage.getItem("name")
+    }
+},
+    computed: {
+        namePrint() {
+
+            if (this.name.split(" ").length > 1) {
+                var nameTemp = this.name.split(" ")[0]
+                return nameTemp
+            }
+            return this.name
+        }
+    }
+}).mount('#nameSide')
+
 // Vue for Dashboard servicing details
 Vue.createApp({
           data(){
               return {
-                  name: sessionStorage.getItem("name"),
+                  name: sessionStorage.getItem("name").charAt(0).toUpperCase + sessionStorage.getItem("name").slice(1),
                   bikeInfo:  
                       { 
                           year : sessionStorage.getItem("year"),
