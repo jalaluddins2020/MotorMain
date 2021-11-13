@@ -37,7 +37,7 @@ function signOut(){
 // Sign Out
 // var users = JSON.parse((sessionStorage.getItem("users")));
 // console.log(users)
-console.log(sessionStorage.getItem("shopList"))
+
 
 
 // Vue for Dashboard servicing details
