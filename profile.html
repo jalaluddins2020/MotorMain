@@ -42,30 +42,125 @@ rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5
 
 <!--Start of form group div-->
 <div class="container-fluid">
-  <div class="col-4 py-5 my-5 mx-auto">
+
+  <div class="col-8 py-5 my-5 mx-auto" style="padding-left: 150px;">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Information</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
     <form class>
-      <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Name</label>
-        <input type="text" class="form-control" id="name" aria-describedby="emailHelp">
-        <div id="emailHelp" class="form-text">Eg. John Smith</div>
+
+      <div class = "row">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Name</label>
+          <input type="text" class="form-control" id="name" aria-describedby="emailHelp">
+          <div class="form-text">Eg. John Smith</div>
+        </div>
       </div>
-      <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Year</label>
-        <input type="number" class="form-control" id="year" aria-describedby="emailHelp">
-        <div id="emailHelp" class="form-text">Eg. 1999</div>
+
+      <div class = "row">
+
+        <div class="col-4 mb-3">
+          <label for="exampleInputEmail1" class="form-label">Motorcycle Make</label>
+          <input type="text" class="form-control" id="make" aria-describedby="emailHelp">
+          <div class="form-text">Eg. Yamaha</div>
+        </div>
+
+        <div class="col-4 mb-3">
+          <label for="exampleInputEmail1" class="form-label">Motorcycle Model</label>
+          <input type="text" class="form-control" id="model" aria-describedby="emailHelp">
+          <div class="form-text">Eg. R1</div>
+        </div>
+
+        <div class="col-4 mb-3">
+          <label for="exampleInputEmail1" class="form-label">Motorcycle Year</label>
+          <input type="number" class="form-control" id="year" aria-describedby="emailHelp">
+          <div class="form-text">Eg. 1999</div>
+        </div>
+
       </div>
-      <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Make</label>
-        <input type="text" class="form-control" id="make" aria-describedby="emailHelp">
-        <div id="emailHelp" class="form-text">Eg. Toyota</div>
+
+      <div class = "row">
+
+        <div class="col-6 mb-3">
+          <label for="exampleInputEmail1" class="form-label">Current Mileage</label>
+          <input type="text" class="form-control" id="crMile" aria-describedby="emailHelp">
+          <div class="form-text">Eg. 20000</div>
+        </div>
+
+        <div class="col-6 mb-3">
+          <label for="exampleInputEmail1" class="form-label">Date</label>
+          <input type="text" class="form-control" id="crDate" aria-describedby="emailHelp">
+          <div class="form-text">Eg. dd/mm/yyyy</div>
+        </div>
+
       </div>
-      <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Model</label>
-        <input type="text" class="form-control" id="model" aria-describedby="emailHelp">
-        <div id="emailHelp" class="form-text">Eg. R5</div>
+
+      <div class = "row">
+
+        <div class="col-6 mb-3">
+          <label for="exampleInputEmail1" class="form-label">Last Engine Oil Service Mileage</label>
+          <input type="text" class="form-control" id="eoMile" aria-describedby="emailHelp">
+          <div class="form-text">Eg. 20000</div>
+        </div>
+
+        <div class="col-6 mb-3">
+          <label for="exampleInputEmail1" class="form-label">Date</label>
+          <input type="text" class="form-control" id="eoDate" aria-describedby="emailHelp">
+          <div class="form-text">Eg. dd/mm/yyyy</div>
+        </div>
+
       </div>
+
+      <div class = "row">
+
+        <div class="col-6 mb-3">
+          <label for="exampleInputEmail1" class="form-label">Last Spark Plug Service Mileage</label>
+          <input type="text" class="form-control" id="spMile" aria-describedby="emailHelp">
+          <div class="form-text">Eg. 20000</div>
+        </div>
+
+        <div class="col-6 mb-3">
+          <label for="exampleInputEmail1" class="form-label">Date</label>
+          <input type="text" class="form-control" id="spDate" aria-describedby="emailHelp">
+          <div class="form-text">Eg. dd/mm/yyyy</div>
+        </div>
+
+      </div>
+
+      <div class = "row">
+
+        <div class="col-6 mb-3">
+          <label for="exampleInputEmail1" class="form-label">Last Coolant Service Mileage</label>
+          <input type="text" class="form-control" id="cMile" aria-describedby="emailHelp">
+          <div class="form-text">Eg. 20000</div>
+        </div>
+
+        <div class="col-6 mb-3">
+          <label for="exampleInputEmail1" class="form-label">Date</label>
+          <input type="text" class="form-control" id="cDate" aria-describedby="emailHelp">
+          <div class="form-text">Eg. dd/mm/yyyy</div>
+        </div>
+
+      </div>
+
+      <div class = "row">
+
+        <div class="col-6 mb-3">
+          <label for="exampleInputEmail1" class="form-label">Last Brake Pad Service Mileage</label>
+          <input type="text" class="form-control" id="brMile" aria-describedby="emailHelp">
+          <div class="form-text">Eg. 20000</div>
+        </div>
+
+        <div class="col-6 mb-3">
+          <label for="exampleInputEmail1" class="form-label">Date</label>
+          <input type="text" class="form-control" id="brDate" aria-describedby="emailHelp">
+          <div class="form-text">Eg. dd/mm/yyyy</div>
+        </div>
+
+      </div>
+      
+
       <div class = "text-center">
-      <button type = "button" class="btn btn-danger mx-auto" onclick = updateInfo()>Submit</button>
+        <button type = "button" class="btn btn-danger mx-auto my-4" onclick = updateInfo()>Submit</button>
       </div>
     </form>
     </div>
