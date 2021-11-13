@@ -48,7 +48,7 @@ rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5
 <!--Start of form group div-->
 <div class="container-fluid">
 
-  <div class="col-8 py-5 my-5 mx-auto" style="padding-left: 150px;">
+  <div class="col-8 py-5 my-5 mx-auto" style="padding-left: 150px;" id = "main">
     <h1 class="w3-xxxlarge w3-text-red"><b>Information</b></h1>
     <hr style="width:50px;border:5px solid red" class="w3-round">
     <form class>
@@ -56,7 +56,7 @@ rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5
       <div class = "row">
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Name</label>
-          <input type="text" class="form-control" id="name" aria-describedby="emailHelp">
+          <input type="text" class="form-control" id="name" aria-describedby="emailHelp" v-bind:value = "name">
           <div class="form-text">Eg. John Smith</div>
         </div>
       </div>
@@ -65,19 +65,19 @@ rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5
 
         <div class="col-4 mb-3">
           <label for="exampleInputEmail1" class="form-label">Motorcycle Make</label>
-          <input type="text" class="form-control" id="make" aria-describedby="emailHelp">
+          <input type="text" class="form-control" id="make" aria-describedby="emailHelp" v-bind:value = "bikeInfo.make">
           <div class="form-text">Eg. Yamaha</div>
         </div>
 
         <div class="col-4 mb-3">
           <label for="exampleInputEmail1" class="form-label">Motorcycle Model</label>
-          <input type="text" class="form-control" id="model" aria-describedby="emailHelp">
+          <input type="text" class="form-control" id="model" aria-describedby="emailHelp" v-bind:value = "bikeInfo.model">
           <div class="form-text">Eg. R1</div>
         </div>
 
         <div class="col-4 mb-3">
           <label for="exampleInputEmail1" class="form-label">Motorcycle Year</label>
-          <input type="number" class="form-control" id="year" aria-describedby="emailHelp">
+          <input type="number" class="form-control" id="year" aria-describedby="emailHelp" v-bind:value = "bikeInfo.year">
           <div class="form-text">Eg. 1999</div>
         </div>
 
@@ -87,13 +87,13 @@ rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5
 
         <div class="col-6 mb-3">
           <label for="exampleInputEmail1" class="form-label">Current Mileage</label>
-          <input type="text" class="form-control" id="crMile" aria-describedby="emailHelp">
+          <input type="text" class="form-control" id="crMile" aria-describedby="emailHelp" v-bind:value = "bikeInfo.crMile">
           <div class="form-text">Eg. 20000</div>
         </div>
 
         <div class="col-6 mb-3">
           <label for="exampleInputEmail1" class="form-label">Date</label>
-          <input type="text" class="form-control" id="crDate" aria-describedby="emailHelp">
+          <input type="text" class="form-control" id="crDate" aria-describedby="emailHelp" v-bind:value = "bikeInfo.crDate">
           <div class="form-text">Eg. dd/mm/yyyy</div>
         </div>
 
@@ -103,13 +103,13 @@ rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5
 
         <div class="col-6 mb-3">
           <label for="exampleInputEmail1" class="form-label">Last Engine Oil Service Mileage</label>
-          <input type="text" class="form-control" id="eoMile" aria-describedby="emailHelp">
+          <input type="text" class="form-control" id="eoMile" aria-describedby="emailHelp" v-bind:value = "bikeInfo.eoMile">
           <div class="form-text">Eg. 20000</div>
         </div>
 
         <div class="col-6 mb-3">
           <label for="exampleInputEmail1" class="form-label">Date</label>
-          <input type="text" class="form-control" id="eoDate" aria-describedby="emailHelp">
+          <input type="text" class="form-control" id="eoDate" aria-describedby="emailHelp" v-bind:value = "bikeInfo.eoDate">
           <div class="form-text">Eg. dd/mm/yyyy</div>
         </div>
 
@@ -119,13 +119,13 @@ rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5
 
         <div class="col-6 mb-3">
           <label for="exampleInputEmail1" class="form-label">Last Spark Plug Service Mileage</label>
-          <input type="text" class="form-control" id="spMile" aria-describedby="emailHelp">
+          <input type="text" class="form-control" id="spMile" aria-describedby="emailHelp" v-bind:value = "bikeInfo.spMile">
           <div class="form-text">Eg. 20000</div>
         </div>
 
         <div class="col-6 mb-3">
           <label for="exampleInputEmail1" class="form-label">Date</label>
-          <input type="text" class="form-control" id="spDate" aria-describedby="emailHelp">
+          <input type="text" class="form-control" id="spDate" aria-describedby="emailHelp" v-bind:value = "bikeInfo.spDate">
           <div class="form-text">Eg. dd/mm/yyyy</div>
         </div>
 
@@ -135,13 +135,13 @@ rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5
 
         <div class="col-6 mb-3">
           <label for="exampleInputEmail1" class="form-label">Last Coolant Service Mileage</label>
-          <input type="text" class="form-control" id="cMile" aria-describedby="emailHelp">
+          <input type="text" class="form-control" id="cMile" aria-describedby="emailHelp" v-bind:value = "bikeInfo.cMile">
           <div class="form-text">Eg. 20000</div>
         </div>
 
         <div class="col-6 mb-3">
           <label for="exampleInputEmail1" class="form-label">Date</label>
-          <input type="text" class="form-control" id="cDate" aria-describedby="emailHelp">
+          <input type="text" class="form-control" id="cDate" aria-describedby="emailHelp" v-bind:value = "bikeInfo.cDate">
           <div class="form-text">Eg. dd/mm/yyyy</div>
         </div>
 
@@ -151,13 +151,13 @@ rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5
 
         <div class="col-6 mb-3">
           <label for="exampleInputEmail1" class="form-label">Last Brake Pad Service Mileage</label>
-          <input type="text" class="form-control" id="brMile" aria-describedby="emailHelp">
+          <input type="text" class="form-control" id="brMile" aria-describedby="emailHelp" v-bind:value = "bikeInfo.brMile">
           <div class="form-text">Eg. 20000</div>
         </div>
 
         <div class="col-6 mb-3">
           <label for="exampleInputEmail1" class="form-label">Date</label>
-          <input type="text" class="form-control" id="brDate" aria-describedby="emailHelp">
+          <input type="text" class="form-control" id="brDate" aria-describedby="emailHelp" v-bind:value = "bikeInfo.brDate">
           <div class="form-text">Eg. dd/mm/yyyy</div>
         </div>
 
