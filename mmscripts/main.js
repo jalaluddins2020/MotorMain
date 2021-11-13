@@ -12,14 +12,14 @@ function w3_open() {
         document.getElementById("myOverlay").style.display = "block";
     }
     
-    function w3_close() {
+function w3_close() {
         document.getElementById("mySidebar").style.display = "none";
         document.getElementById("myOverlay").style.display = "none";
     }
 // Script to open and close sidebar
 
 // Modal Image Gallery
-    function onClick(element) {
+function onClick(element) {
         document.getElementById("img01").src = element.src;
         document.getElementById("modal01").style.display = "block";
         var captionText = document.getElementById("caption");
@@ -64,7 +64,7 @@ Vue.createApp({
 Vue.createApp({
           data(){
               return {
-                  name: sessionStorage.getItem("name").charAt(0).toUpperCase + sessionStorage.getItem("name").slice(1),
+                  name: sessionStorage.getItem("name"),
                   bikeInfo:  
                       { 
                           year : sessionStorage.getItem("year"),
