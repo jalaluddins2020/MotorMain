@@ -13,17 +13,21 @@ rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5
 <!-- Sidebar -->
 <nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:200px;font-weight:bold;" id="mySidebar"><br>
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
-  <div class="w3-container">
+  <div class="w3-container" style="padding-top:30px;">
+    <div class="col" id="nameSide">
+      <h5>Welcome, {{namePrint}}!</h5>
+    </div>
     <img src="assets/mmLogo2.png" style="width:130px;">
     <!-- <h3 class="w3-padding-64"><b>MotorMain</b></h3> -->
   </div>
   <div class="w3-bar-block">
     <a href="dashboard.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Dashboard</a> 
     <a href="map.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Map</a> 
+    <a href="shops.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Workshops</a> 
     <a href="faq.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">FAQ</a> 
   </div>
   <div class="dropdown col" id="dropdown" style="position: absolute;bottom: 20px;">
-    <img src="assets/mmRider.jpg" alt="" width="50" height="47" class="rounded-circle dropdown-toggle dropdown" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+    <img src="assets/mmRider2.jpg" alt="" width="50" height="47" class="rounded-circle dropdown-toggle dropdown" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
     
     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
       <li><a class="dropdown-item" href="profile.html">Profile</a></li>
@@ -31,14 +35,12 @@ rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5
       <li><button class="dropdown-item" onclick = "signOut()">Sign out</button></li>
     </ul>
   </div>
-  <div class="col" id="nameSide"style="position: absolute;bottom: 20px; right:80px;">
-    <h5>{{name}}</h5>
-  </div>
 </nav>
 
 <!-- Sidebar becomes - Top menu on small screens -->
 <header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
   <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">☰</a>
+  <img src="assets/mmLogo2.png" style="width:80px;">
   <span>MotorMain</span>
 </header>
 
