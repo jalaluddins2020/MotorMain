@@ -55,7 +55,11 @@ Vue.createApp({
                           eoMile : sessionStorage.getItem("eoMile"),
                           eoDate : sessionStorage.getItem("eoDate"),
                           spMile : sessionStorage.getItem("spMile"),
-                          spDate : sessionStorage.getItem("spDate")
+                          spDate : sessionStorage.getItem("spDate"),
+                          cMile : sessionStorage.getItem("cMile"),
+                          cDate : sessionStorage.getItem("cDate"),
+                          brMile : sessionStorage.getItem("brMile"),
+                          brDate : sessionStorage.getItem("brDate"),
                       },
                   shopList: sessionStorage.getItem("shopList")
 
@@ -67,7 +71,7 @@ Vue.createApp({
               return Number(this.bikeInfo.eoMile) + Number(toAdd)
             },
             nextEoDate(){
-              var eoNext = 3
+              var eoNext = 3 // service in 3 months time
               var dateArray = this.bikeInfo.eoDate.split("/")
               var convertedDate = dateArray[1] + "/" + dateArray[0] + "/" + dateArray[2]
               var dateObj = new Date(convertedDate)
@@ -79,10 +83,11 @@ Vue.createApp({
             },
             nextSpMile(){
             var toAdd = sessionStorage.getItem("spChangeMile")
+            console.log(toAdd)
               return Number(this.bikeInfo.spMile) + Number(toAdd)
             },
             nextSpDate(){
-              var spNext = 12
+              var spNext = 12 // service in 12 months time
               var dateArray = this.bikeInfo.spDate.split("/")
               var convertedDate = dateArray[1] + "/" + dateArray[0] + "/" + dateArray[2]
               var dateObj = new Date(convertedDate)
@@ -92,6 +97,21 @@ Vue.createApp({
               var yyyy = dateObj.getFullYear() 
               return (dd+"/"+mm+"/"+yyyy)
             },
+            nextCMile(){
+              var toAdd = sessionStorage.getItem("cChangeMile")
+              return Number(this.bikeInfo.cMile) + Number(toAdd)
+            },
+            nextCDate(){
+                var spNext = 24 // service in 24 months time
+                var dateArray = this.bikeInfo.spDate.split("/")
+                var convertedDate = dateArray[1] + "/" + dateArray[0] + "/" + dateArray[2]
+                var dateObj = new Date(convertedDate)
+                dateObj.setMonth(dateObj.getMonth() + spNext)
+                var dd = dateObj.getDate()
+                var mm = dateObj.getMonth() + 1
+                var yyyy = dateObj.getFullYear() 
+                return (dd+"/"+mm+"/"+yyyy)
+            }
           }
       }).mount('#main')
 // END of Vue for dashboard servicing details
@@ -196,3 +216,71 @@ function updateSp() {
     location.reload();
   }
 
+
+
+  function updateBr() {
+    var newMileage = Number(prompt("Enter new mileage (km) "));
+    while ( newMileage == "") {
+        newMileage = Number(prompt("Please enter new mileage (km) "));
+    }
+
+    var intDate = prompt("Enter date of service (dd/mm/yyy) (if today, leave empty)");
+    
+    while ((intDate[2] != "/" || intDate[5] != "/") && intDate != "") {
+        intDate = prompt("Please enter date of service (dd/mm/yyy) (if today, leave empty)");
+    }
+
+    if (intDate == "") {
+        var today = new Date();
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+        var yyyy = today.getFullYear();
+        var newDate = dd + '/' + mm + '/' + yyyy;
+    } else {
+        var newDate = intDate;
+    }
+
+    var ref = firebase.database().ref("users/" + uid + "/bikeInfo");
+
+    ref.update ({
+    "crMile": newMileage,
+    "crDate": newDate,
+    "brMile": newMileage,
+    "brDate" : newDate
+    });
+    location.reload();
+  }
+
+
+  function updateC() {
+    var newMileage = Number(prompt("Enter new mileage (km) "));
+    while ( newMileage == "") {
+        newMileage = Number(prompt("Please enter new mileage (km) "));
+    }
+
+    var intDate = prompt("Enter date of service (dd/mm/yyy) (if today, leave empty)");
+    
+    while ((intDate[2] != "/" || intDate[5] != "/") && intDate != "") {
+        intDate = prompt("Please enter date of service (dd/mm/yyy) (if today, leave empty)");
+    }
+
+    if (intDate == "") {
+        var today = new Date();
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+        var yyyy = today.getFullYear();
+        var newDate = dd + '/' + mm + '/' + yyyy;
+    } else {
+        var newDate = intDate;
+    }
+
+    var ref = firebase.database().ref("users/" + uid + "/bikeInfo");
+
+    ref.update ({
+    "crMile": newMileage,
+    "crDate": newDate,
+    "cMile": newMileage,
+    "cDate" : newDate
+    });
+    location.reload();
+  }
