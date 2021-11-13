@@ -51,9 +51,11 @@ Vue.createApp({
 
             if (this.name.split(" ").length > 1) {
                 var nameTemp = this.name.split(" ")[0]
+                nameTemp = nameTemp.charAt(0).toUpperCase() + nameTemp.slice(1)
                 return nameTemp
             }
-            return this.name
+            var nameTemp = this.name.charAt(0).toUpperCase() + this.name.slice(1)
+            return nameTemp
         }
     }
 }).mount('#nameSide')
