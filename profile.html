@@ -40,6 +40,7 @@ rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5
 <!-- Overlay effect when opening sidebar on small screens -->
 <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
+<!--Start of form group div-->
 <div class="container-fluid">
   <div class="col-4 py-5 my-5 mx-auto">
     <form class>
@@ -50,7 +51,7 @@ rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5
       </div>
       <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Year</label>
-        <input type="text" class="form-control" id="year" aria-describedby="emailHelp">
+        <input type="number" class="form-control" id="year" aria-describedby="emailHelp">
         <div id="emailHelp" class="form-text">Eg. 1999</div>
       </div>
       <div class="mb-3">
@@ -69,6 +70,7 @@ rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5
     </form>
     </div>
 </div>
+<!--End of form group div-->
 
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script> 
