@@ -14,7 +14,8 @@ rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5
 <nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:200px;font-weight:bold;" id="mySidebar"><br>
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
   <div class="w3-container">
-    <h3 class="w3-padding-64"><b>MotorMain</b></h3>
+    <img src="assets/mmLogo2.png" style="width:130px;">
+    <!-- <h3 class="w3-padding-64"><b>MotorMain</b></h3> -->
   </div>
   <div class="w3-bar-block">
     <a href="dashboard.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Dashboard</a> 
@@ -59,12 +60,11 @@ rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5
         <h1 class="w3-xxxlarge w3-text-red"><b>Dashboard</b></h1>
         <hr style="width:50px;border:5px solid red" class="w3-round">
         <div class="card">
-            <img class="card-img-top mx-auto my-2"  style="width: 50vw;" src="assets/s1k.jpg" onclick="onClick(this)" alt="">
             <div class="card-body">
               <h1 class="card-title text-center">{{bikeInfo.make}} {{bikeInfo.model}} ({{bikeInfo.year}})</h1>
               <h6 class="card-text text-center">Maintenance Information</h6>
               <div class = "info-main my-3"> 
-                <table class="w3-table">
+                <table class="w3-table w3-bordered">
                     <tbody>
 
                         <tr>
@@ -99,16 +99,31 @@ rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5
                         <td><button type="button" class="w3-bar-item w3-light-grey w3-button w3-hover-red" onclick="updateSp()">Update</button></td>
                         <!-- put js/onlick - give prompts and update-->
                       </tr>
+                      
+                      <tr>
+                        <th scope="row" class="w3-text-red">Last Coolant Service:</th>
+                        <td>{{bikeInfo.cMile}}</td>
+                        <td>{{bikeInfo.cDate}}</td>
+                        <td><button type="button" class="w3-bar-item w3-light-grey w3-button w3-hover-red" onclick="updateC()">Update</button></td>
+                        <!-- put js/onlick - give prompts and update-->
+                      </tr>
 
+                      <tr>
+                        <th scope="row" class="w3-text-red">Last Brake Pad Service:</th>
+                        <td>{{bikeInfo.brMile}}</td>
+                        <td>{{bikeInfo.brDate}}</td>
+                        <td><button type="button" class="w3-bar-item w3-light-grey w3-button w3-hover-red" onclick="updateBr()">Update</button></td>
+                        <!-- put js/onlick - give prompts and update-->
+                      </tr>
                     </tbody>
                   </table>
                   
           </div>
 
           <!--Recommended servicing mileage table-->
-          <h6 class="card-text text-center">Recommended Servicing Information</h6>
+          <h6 class="card-text text-center">Recommended Future Servicing Information</h6>
           <div class = "info-main my-3"> 
-            <table class="w3-table">
+            <table class="w3-table w3-bordered">
                 <tbody>
                     <tr>
                         <th scope="row" class="w3-text-red"><b>Type</b></th>
@@ -129,6 +144,13 @@ rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5
                     <th scope="row" class="w3-text-red">Spark Plug Service:</th>
                     <td>{{nextSpMile}}</td>
                     <td>{{nextSpDate}}</td>
+                    <!-- put js/onlick - give prompts and update-->
+                  </tr>
+
+                  <tr>
+                    <th scope="row" class="w3-text-red">Coolant Service:</th>
+                    <td>{{nextCMile}}</td>
+                    <td>{{nextCDate}}</td>
                     <!-- put js/onlick - give prompts and update-->
                   </tr>
 

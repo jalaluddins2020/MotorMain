@@ -43,10 +43,15 @@
             sessionStorage.setItem("eoDate", (snapshot.val()).users[uid].bikeInfo.eoDate)
             sessionStorage.setItem("spMile", (snapshot.val()).users[uid].bikeInfo.spMile)
             sessionStorage.setItem("spDate", (snapshot.val()).users[uid].bikeInfo.spDate)
+            sessionStorage.setItem("cMile", (snapshot.val()).users[uid].bikeInfo.cMile)
+            sessionStorage.setItem("cDate", (snapshot.val()).users[uid].bikeInfo.cDate)
+            sessionStorage.setItem("brMile", (snapshot.val()).users[uid].bikeInfo.brMile)
+            sessionStorage.setItem("brDate", (snapshot.val()).users[uid].bikeInfo.brDate)
             sessionStorage.setItem("eoChangeMile", (snapshot.val()).schedule.eo.eoChangeMile)
-            sessionStorage.setItem("eoChangeDate", (snapshot.val()).schedule.eo.eoChangeDate)
-            sessionStorage.setItem("spChangeDate", (snapshot.val()).schedule.sp.spChangeDate)
             sessionStorage.setItem("spChangeMile", (snapshot.val()).schedule.sp.spChangeMile)
+            sessionStorage.setItem("cChangeMile", (snapshot.val()).schedule.coolant.cChangeMile)
+            
+
         }, function (error) {
             console.log("Error: " + error.code);
             document.getElementById("error").innerHTML= 

@@ -20,8 +20,30 @@ crossorigin="anonymous">
 <body>
 
 
-<h1 class="text-center w3-text-red">Sign in to <b>MotorMain</b></h1>
-<p class="text-center">Get your servicing schedule now!</p>
+    <style>
+        .topBar{
+            width:auto;
+            margin:auto;
+        }
+
+        .previousRound {
+            background-color: #f1f1f1;
+            color: black;
+            border-radius: 50%;
+            text-decoration: none;
+            display: inline-block;
+            padding: 8px 16px;
+}
+    </style>
+
+    <br>
+    <br>
+    <br>
+
+<div class="topBar">
+    <h1 class="text-center w3-text-red">Sign in to <b>MotorMain</b></h1>
+    <p class="text-center">Get your servicing schedule now!</p>
+</div>
 
 <!--Start of Login Form-->
 <div class='container'>
@@ -37,7 +59,9 @@ crossorigin="anonymous">
     </div>
 </div>
 
-<a href="index.html" class="w3-button w3-red w3-display-bottommiddle" style="width:50%;font-size:2vw;">Back</a>
+<a href="index.html" class="previousRound">&#8249;</a>
+
+<!-- <a href="index.html" class="w3-button w3-red w3-display-bottommiddle" style="width:50%;font-size:2vw;">Back</a> -->
 
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script> 
