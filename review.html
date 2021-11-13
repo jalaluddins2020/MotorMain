@@ -8,10 +8,10 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" 
 rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 <link rel="stylesheet" href="mmstyles/style.css">
-<script src="mmscripts/test.js"></script>
 </head>
 
 <body>
+
 <!-- Sidebar -->
 <nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:200px;font-weight:bold;" id="mySidebar"><br>
     <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
@@ -60,7 +60,7 @@ rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5
                     <div class="row">
                         <div class="col-md-8 mx-auto">
                             <label for="customRange2" class="form-label">Rate your recent experience (0: Not good, 5: Excellent!)</label>
-                            <input type="range" min="0" max="5" value="50" class="slider" id="myRange">
+                            <input type="range" min="0" max="5" value="5" class="slider" id="myRange">
                             <p>Value: <span id="value"></span></p>
                         </div>
                     </div>
@@ -93,6 +93,18 @@ rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5
                 </div>
             </div>
 </div>
+
+    <script>
+      var slider = document.getElementById("myRange");
+      console.log(slider)
+      var output = document.getElementById("value");
+      console.log(output)
+      output.innerHTML = slider.value;
+      slider.oninput = function() {
+        output.innerHTML = this.value;
+      }
+    </script>
+
     <script src="mmscripts/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" 
     integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" 
