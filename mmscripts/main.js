@@ -64,7 +64,7 @@ Vue.createApp({
 Vue.createApp({
           data(){
               return {
-                  name: sessionStorage.getItem("name").charAt(0).toUpperCase + sessionStorage.getItem("name").slice(1),
+                  name: sessionStorage.getItem("name"),
                   bikeInfo:  
                       { 
                           year : sessionStorage.getItem("year"),
