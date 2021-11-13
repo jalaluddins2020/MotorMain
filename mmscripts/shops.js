@@ -154,12 +154,12 @@ function displayWorkshopOnMap(lat, long){
     console.log(workshopLon, workshopLat);
 
     
-    initMapCarPark();
+    initWorkshop();
     
 
 }
 
-function initMapCarPark() {
+function initWorkshop() {
     document.getElementById("map").style = "none";
     const map = new google.maps.Map(document.getElementById("map"), {
         zoom: 15,
