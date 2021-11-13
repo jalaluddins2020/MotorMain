@@ -312,7 +312,9 @@ function updateSp() {
 
   //Review Page - RANGE
 var slider = document.getElementById("myRange");
-var output = document.getElementById("demo");
+console.log(slider)
+var output = document.getElementById("value");
+console.log(output)
 output.innerHTML = slider.value; // Display the default slider value
 
 // Update the current slider value (each time you drag the slider handle)
