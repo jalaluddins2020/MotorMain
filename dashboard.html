@@ -14,6 +14,9 @@ rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5
 <nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:200px;font-weight:bold;" id="mySidebar"><br>
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
   <div class="w3-container">
+    <div class="col" id="nameSide">
+      <h5>Welcome, {{namePrint}}!</h5>
+    </div>
     <img src="assets/mmLogo2.png" style="width:130px;">
     <!-- <h3 class="w3-padding-64"><b>MotorMain</b></h3> -->
   </div>
@@ -30,9 +33,6 @@ rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5
       <li><a class="dropdown-item" href="settings.html">Settings</a></li>
       <li><button class="dropdown-item" onclick = "signOut()">Sign out</button></li>
     </ul>
-  </div>
-  <div class="col" id="nameSide"style="position: absolute;bottom: 20px; right:80px;">
-    <h5>{{name}}</h5>
   </div>
 </nav>
 
