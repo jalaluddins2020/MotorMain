@@ -6,17 +6,18 @@ function updateInfo() {
     if (name==""||year==""||make==""||model==""){
         alert("Some fields are missing information.")
     } else {
-        var ref = firebase.database().ref("users/" + uid + "/bikeInfo");
+        var ref = firebase.database().ref("users/" + uid)
         console.log(uid)
-        ref.update ({
-        "Year": year,
-        "Make" : make,
-        "Model" : model
-    });
-    var ref2 = firebase.database().ref("users/" + uid);
-        console.log(uid)
-        ref2.update ({
-        "name": name
-    });
+        console.log(name)
+        console.log(year)
+        console.log(make)
+        ref.set({
+            "name": name,
+            "bikeInfo" : {
+                "Year": year,
+                "Make" : make,
+                "Model" : model
+            }
+        });
     }
 }
