@@ -40,4 +40,5 @@ function updateInfo() {
             }
         });
     }
+    window.location.href = "dashboard.html";
 }
