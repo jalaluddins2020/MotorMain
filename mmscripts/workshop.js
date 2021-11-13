@@ -1,3 +1,38 @@
+
+var shop = "shop";
+var num = 0;
+var infoMain = document.getElementById("info-main")
+var output = `<table class="w3-table">
+        <tbody class="w3-bordered">
+        <tr>
+            <th scope="row" class="w3-text-red"><b>Shop</b></th>
+            <th>Address</th>
+    </tr>`
+for (let obj in sessionStorage) {
+    if (obj.slice(0, 4) == shop) {
+        let shop = sessionStorage[obj].split("+")
+        var name = shop[0].slice(0, -1)
+        var address = shop[1].slice(1, -1)
+        var lat = shop[2].slice(1).split(",")[0]
+        var long = shop[2].slice(1).split(",")[1].slice(1);
+        output += `<tr>
+        <td><button type="button" onclick="displayWorkshopOnMap(${lat}, ${long})">Show on map</button></td>
+        <th scope="row" class="w3-text-red"><b>`+ name +`</b></th>
+        <th>`+ address +`</th>
+        </tr>`;
+    }
+}
+
+output += `</tbody>
+            </table>`
+
+infoMain.innerHTML = output
+
+
+
+
+
+
 /* Weather Information Section */
 
 var key = "d8ad138bef71d007adaa6bc3ffd863eb";
@@ -35,7 +70,7 @@ function showPosition(position) {
 getLocation();
 
 function getWeatherWithCoordinates(){
-    getWorkshops();
+    // getCarpark();
     axios.get(url, {
         params: {
             lat: latitude, 
@@ -66,6 +101,7 @@ function getWeatherWithCoordinates(){
     })
 
 }
+
 
 /* Traffic map */
 function initMap() {
@@ -106,77 +142,17 @@ function initMap() {
 `https://maps.googleapis.com/maps/api/place/nearbysearch/json?key=${googleKey}&location=-33.8670522%2C151.1957362&radius=1500&type=parking`;
 */
 
-getCarParkBtn.addEventListener("click", getWorkshops);
 
-displayCarparkEle = document.getElementById("displayCarParks");
-displayCarparkEle.style.display = "none";
 
-var carParkCoordinateList = [];
-var carParkInformationList = [];
-
-function getWorkshops() {
-
-    var shopList = sessionStorage.getItem("shopList")
-    console.log(shopList)
-    if (shopList = ""){
-        console.log(shopList);
-        outputHTML = "<br><br><b>...Please enable location/CORS for car parks<b>";
-        displayCarparkEle.innerHTML = outputHTML;
-        displayCarparkEle.style.display = "block";
-    } else {
-        console.log(shopList);
-        carparkListObject = shopList;
-        outputHTML = "<table border=1>";
-
-        //console.log(Object.keys(carparkListObject));
-
-        // Process return datas into html output
-        let counter = 0;
-        for (let shops of shopList.slice(0, 20)) {
-            let name = carpark.name;
-            let address = carpark.formatted_address;
-            let status = carpark.business_status;
-            outputHTML += `<tr>
-                           <td><button type="button" onclick="displayCarParkOnMap(${counter})">Show on map</button></td>
-                           <td>${name}</td>
-                           <td>${address}</td></tr>`;
-            counter += 1;
-
-            //Longitude and latitude for map generating
-            let longLat = carpark.geometry.location;
-            carParkCoordinateList.push(longLat);
-
-            //Extra car park informations
-
-            carParkInformationList.push([name, address, status]);
-        } 
-
-        outputHTML += "</table>20 Car Parks Found"
-
-        displayCarparkEle.innerHTML = outputHTML;
-        displayCarparkEle.style.display = "block";
-
-    }
-}
-
-/* Display Carpark on Map */
-/* displayCarParkOnMapEle = document.getElementById("displayCarParkOnMap");
-displayCarParkOnMapEle.style.display = "none"; */
-
-function displayCarParkOnMap(index){
-
+function displayWorkshopOnMap(lat, long){
+    console.log(lat, long)
     /* displayCarParkOnMapEle.style.display = "block"; */
 
-    carParkCoordinate = carParkCoordinateList[index];
-    carParkLon = carParkCoordinate.lng;
-    carParkLat = carParkCoordinate.lat;
+    workshopLon = long;
+    workshopLat = lat;
 
-    console.log(carParkCoordinate);
+    console.log(workshopLon, workshopLat);
 
-    carParkInfo = carParkInformationList[index];
-    carParkName = carParkInfo[0];
-    carParkAddress = carParkInfo[1];
-    carParkStatus = carParkInfo[2];
     
     initMapCarPark();
     
@@ -187,7 +163,7 @@ function initMapCarPark() {
     document.getElementById("map").style = "none";
     const map = new google.maps.Map(document.getElementById("map"), {
         zoom: 15,
-        center: { lat: carParkLat, lng: carParkLon },
+        center: { lat: workshopLat, lng: workshopLon },
         mapTypeControl: false,
     });
 
@@ -200,18 +176,11 @@ function initMapCarPark() {
     });
 
     const marker = new google.maps.Marker({
-        position: { lat: carParkLat, lng: carParkLon },
+        position: { lat: workshopLat, lng: workshopLon },
         map,
-        title: "Car Park Information",
+        title: "Workshop Information",
     });
 
-    console.log(carParkName);
-
-    const infoWindow = new google.maps.InfoWindow({
-        content: `<h2>${carParkName}</h2>
-                  ${carParkAddress}<br>
-                  ${carParkStatus}<br>`,
-    })
     marker.addListener("click", () => {
         infoWindow.open({
           anchor: marker,
@@ -247,7 +216,7 @@ function initMapCarPark() {
         directionsService
           .route({
             origin: { lat: latitude, lng: longitude},
-            destination: { lat: carParkLat, lng: carParkLon },
+            destination: { lat: workshopLat, lng: workshopLon },
             // Note that Javascript allows us to access the constant
             // using square brackets and a string value as its
             // "property."
