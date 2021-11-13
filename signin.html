@@ -16,50 +16,40 @@ integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/
 crossorigin="anonymous">
 <script src="mmscripts/sessionIn.js"></script>
 <link rel="stylesheet" href="mmstyles/style.css">
+<style>
+</style>
 </head>
-<body>
+<body style="background:#f44336;">
 
 
-    <style>
-        .topBar{
-            width:auto;
-            margin:auto;
-        }
+    <div class="container my-5">
+        <div class="card mx-auto" style="width: 80%; background-color:#f1f1f1; box-shadow: 10px 15px #9e9e9e">
+            <div class="card-body text-center">
 
-        .previousRound {
-            background-color: #f1f1f1;
-            color: black;
-            border-radius: 50%;
-            text-decoration: none;
-            display: inline-block;
-            padding: 8px 16px;
-}
-    </style>
+                <h1 class="w3-xxxlarge w3-text-red">Sign in to <b>MotorMain</b></h1>
 
-    <br>
-    <br>
-    <br>
-
-<div class="topBar">
-    <h1 class="text-center w3-text-red">Sign in to <b>MotorMain</b></h1>
-    <p class="text-center">Get your servicing schedule now!</p>
-</div>
-
-<!--Start of Login Form-->
-<div class='container'>
-    <div class="row">
-        <div class="col">
-            <form>
-                <br><!--To insert logo here-->
-                <div class="form-group">
-                  <div id="firebaseui-auth-container"></div>
-                  <div id="loader">Loading...</div>
-              </form>
-        </div>
+              <p class="card-text">Get your servicing schedule now!</p>
+              <img src="assets/mmLogo2.png" style="width:130px; border-radius: 10%;">
+              <!--Start of Login Form-->
+              <div class='container'>
+                <div class="row">
+                    <div class="col">
+                        <form>
+                            <br>
+                            <div class="form-group">
+                              <div id="firebaseui-auth-container"></div>
+                              <div id="loader">Loading...</div>
+                          </form>
+                    </div>
+                </div>
+            </div>
+            <a type="button" class="w3-bar-item w3-light-grey w3-button w3-hover-red" href="index.html" >Cancel</a>
+          </div>
     </div>
-</div>
 
-<a href="index.html" class="previousRound">&#8249;</a>
+
+
+
 
 <!-- <a href="index.html" class="w3-button w3-red w3-display-bottommiddle" style="width:50%;font-size:2vw;">Back</a> -->
 

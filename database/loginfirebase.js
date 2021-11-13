@@ -65,9 +65,9 @@ var uiConfig = {
     //firebase.auth.PhoneAuthProvider.PROVIDER_ID
   ],
   // Terms of service url.
-  tosUrl: '<your-tos-url>',
+  // tosUrl: '<your-tos-url>',
   // Privacy policy url.
-  privacyPolicyUrl: '<your-privacy-policy-url>'
+  // privacyPolicyUrl: '<your-privacy-policy-url>'
 };
 
 // The start method will wait until the DOM is loaded.
