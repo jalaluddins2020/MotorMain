@@ -67,6 +67,7 @@ function getWeatherWithCoordinates(){
 
 }
 
+
 /* Traffic map */
 function initMap() {
     //console.log(latitude, longitude)
