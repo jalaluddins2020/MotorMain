@@ -1,0 +1,33 @@
+html{
+    scroll-behavior: smooth;
+       }
+
+       
+   .background{
+     background-image: url("../assets/pic3.jpg");
+     background-attachment: fixed;
+     background-repeat: no-repeat;
+     background-position: 50% 160%;
+     background-size: cover;
+     height: 50%;
+     } 
+   
+   .special {
+     color: white;
+     font-family: 'Poppins','Sans-Serif';
+     font-weight: bold;
+   }
+
+   .fa-anchor,.fa-coffee{
+     font-size: 200px;
+   }
+
+   .fa-anchor,.fa-coffee {font-size:200px}
+
+   .fa-coffee {
+     padding-right: 50px;
+   }
+
+   .fa-anchor {
+     padding-left: 100px
+   }

@@ -309,15 +309,3 @@ function updateSp() {
   function verify(){
     alert("Update Successful!")
   }
-
-  //Review Page - RANGE
-var slider = document.getElementById("myRange");
-console.log(slider)
-var output = document.getElementById("value");
-console.log(output)
-output.innerHTML = slider.value; // Display the default slider value
-
-// Update the current slider value (each time you drag the slider handle)
-slider.oninput = function() {
-  output.innerHTML = this.value;
-}

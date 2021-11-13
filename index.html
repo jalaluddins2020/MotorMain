@@ -1,66 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
 <title>MotorMain</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="mmstyles/style.css">
-
+<link rel="stylesheet" href="mmstyles/indexstyle.css">
+</head>
 <body>
 
-
-    <style>
-        html{
-     scroll-behavior: smooth;
-        }
-
-        
-    .background{
-      background-image: url("assets/pic3.jpg");
-      background-attachment: fixed;
-      background-repeat: no-repeat;
-      background-position: 50% 160%;
-      background-size: cover;
-      height: 50%;
-      } 
-    
-    .special {
-      color: white;
-      text-shadow:  1px 1px red;
-      font-family: 'Poppins','Sans-Serif';
-      font-weight: bold;
-    }
-
-    .fa-anchor,.fa-coffee{
-      font-size: 200px;
-    }
-
-    .fa-anchor,.fa-coffee {font-size:200px}
-
-    .fa-coffee {
-      padding-right: 50px;
-    }
-
-    .fa-anchor {
-      padding-left: 100px
-    }
-    </style>
 
 <!-- Navbar -->
 <div class="w3-top" >
   <div class="w3-bar w3-red w3-card w3-left-align w3-large">
         <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
         <a href="#top" class="w3-bar-item w3-button w3-padding-large w3-white">MotorMain</a>
-            <a href="#why" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Why MotorMain?</a>
-            <a href="#features" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Features!</a>
+            <a href="#why" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Why MotorMain</a>
+            <a href="#features" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Features</a>
             <a href="#abtus" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">About Us</a>
 </div>
 
   <!-- Navbar on small screens -->
   <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
     <a href="#top" class="w3-bar-item w3-button w3-padding-large w3-hover-red" >MotorMain</a>
-    <a href="#why" class="w3-bar-item w3-button w3-padding-large w3-hover-red">Why MotorMain?</a>
+    <a href="#why" class="w3-bar-item w3-button w3-padding-large w3-hover-red">Why MotorMain</a>
     <a href="#features" class="w3-bar-item w3-button w3-padding-large w3-hover-red">Features</a>
     <a href="#abtus" class="w3-bar-item w3-button w3-padding-large w3-hover-red">About Us</a>
   </div>
@@ -70,9 +35,10 @@
 
 <div class="background special" style="padding:200px 16px; text-align: center;" id = "top">
   <div class="text-center">
-    <h1 class="w3-jumbo">WELCOME TO MOTORMAIN!</h1>
+    <img src="assets/mmLogo2.png" style="width:200px;border-radius: 10%;opacity: 0.9;">
+    <h1 class="w3-jumbo">Welcome to MotorMain</h1>
     <p class="w3-xlarge">Your one stop Motorbike Web Application for your motorbike needs.</p>
-    <button class="w3-button w3-black w3-padding-large w3-large w3-margin-top"><a href ="signin.html">Login Now!</a></button>
+    <a type="button" class="w3-bar-item w3-light-grey w3-button w3-hover-red" href="signin.html" >Log In</a>
   </div>
 </div>
 
@@ -81,7 +47,7 @@
     <div id="why" class="w3-row-padding w3-padding-64 w3-container">
         <div class="w3-content">
         <div class="w3-twothird">
-            <h1>Why MotorMain?</h1>
+            <h1>What is MotorMain?</h1>
             <h5 class="w3-padding-32">There are applications for cars, but how often do you see an application for riders? RARELY.</h5>
             <p class="w3-text-grey">Being avid riders ourselves with over 2 years of riding experience, we decided it was about time we help our fellow riders out. Hence, the creation of this one stop application that was founded by three young riders...</p>
         </div>
