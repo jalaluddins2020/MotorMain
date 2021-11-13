@@ -12,14 +12,14 @@ function w3_open() {
         document.getElementById("myOverlay").style.display = "block";
     }
     
-    function w3_close() {
+function w3_close() {
         document.getElementById("mySidebar").style.display = "none";
         document.getElementById("myOverlay").style.display = "none";
     }
 // Script to open and close sidebar
 
 // Modal Image Gallery
-    function onClick(element) {
+function onClick(element) {
         document.getElementById("img01").src = element.src;
         document.getElementById("modal01").style.display = "block";
         var captionText = document.getElementById("caption");
@@ -309,15 +309,3 @@ function updateSp() {
   function verify(){
     alert("Update Successful!")
   }
-
-  //Review Page - RANGE
-var slider = document.getElementById("myRange");
-console.log(slider)
-var output = document.getElementById("value");
-console.log(output)
-output.innerHTML = slider.value; // Display the default slider value
-
-// Update the current slider value (each time you drag the slider handle)
-slider.oninput = function() {
-  output.innerHTML = this.value;
-}
