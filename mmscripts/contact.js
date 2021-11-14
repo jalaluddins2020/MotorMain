@@ -1,3 +1,5 @@
+// Contact.js functions
+
 function toContact(){
     var contactInput = document.getElementById("contactInput").value
     var contactEmail = document.getElementById("contactEmail").value

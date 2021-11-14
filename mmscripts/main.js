@@ -1,3 +1,8 @@
+// This file contains codes that are used for every webpage.
+
+
+//Checking if uid is set
+
 var uid = sessionStorage.getItem("uid")
 if (uid == null) {
     sessionStorage.clear();
