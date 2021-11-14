@@ -17,17 +17,3 @@ html{
      font-family: 'Poppins','Sans-Serif';
      font-weight: bold;
    }
-
-   .fa-anchor,.fa-coffee{
-     font-size: 200px;
-   }
-
-   .fa-anchor,.fa-coffee {font-size:200px}
-
-   .fa-coffee {
-     padding-right: 50px;
-   }
-
-   .fa-anchor {
-     padding-left: 100px
-   }
