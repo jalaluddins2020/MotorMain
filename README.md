@@ -9,5 +9,7 @@ b) how to run your application
         2) The recommended future servicing schedules will be automatically updated
     - Map
         1) Find Weather Information
-        2) Find Carparks nearest to you
+        2) Find Carparks nearest to you 
+            - Please download the below extension to be able to view the carparks information
+            - (https://chrome.google.com/webstore/detail/moesif-origin-cors-change/digfbfaphojjndkpccljibejjbppifbc)
         3) Find workshops in Singapore
