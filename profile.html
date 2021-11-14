@@ -49,10 +49,12 @@ rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5
 <!-- Overlay effect when opening sidebar on small screens -->
 <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:240px;margin-right:40px">
 <!--Start of form group div-->
 <div class="w3-container">
 
-  <div class="col-8 py-5 my-5 mx-auto" style="padding-left: 150px;" id = "main">
+  <div id = "main" style="margin-top:90px">
     <h1 class="w3-xxxlarge w3-text-red"><b>Information</b></h1>
     <hr style="width:50px;border:5px solid red" class="w3-round">
     <form class>
@@ -169,11 +171,13 @@ rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5
       
 
       <div class = "text-center">
-        <button type = "button" class="btn btn-danger mx-auto my-4" onclick = updateInfo()>Submit</button>
+        <button type = "button" class="w3-bar-item w3-light-grey w3-button w3-hover-red" onclick = updateInfo()>Submit</button>
       </div>
     </form>
     </div>
 </div>
+</div>
+
 <!--End of form group div-->
 
 <!-- The core Firebase JS SDK is always required and must be listed first -->
