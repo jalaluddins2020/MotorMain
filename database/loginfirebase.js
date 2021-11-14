@@ -1,11 +1,4 @@
-
-  // Your web app's Firebase configuration
-  // You can find yours at Firebase -> Project Overview -> Project Settings
-  // -> SDK setup and configuration -> CDN
-  // Import the functions you need from the SDKs you need
-
 // Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
     apiKey: "AIzaSyDO5olDApwyfXFTakiRtvL1V-xwy4Z4VHk",
     authDomain: "motormain-c6aa7.firebaseapp.com",

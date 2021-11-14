@@ -1,9 +1,6 @@
-
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.3/firebase-app.js";
   import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.1.3/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
 
   // Your web app's Firebase configuration
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -21,16 +18,11 @@
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
 
-    // getting uid from session
-    // if (sessionStorage.getItem("uid") == "") {
-    //   sessionStorage.clear();
-    //   window.location.href = "index.html";
-    // }
-    // else {
-    //   var uid = sessionStorage.getItem("uid");
-    // }
+    // Getting uid from session
     var uid = sessionStorage.getItem("uid", uid);
     
+
+    // Setting database values as variables inside a session
         var ref = firebase.database().ref();
         ref.on("value", function(snapshot) {
             sessionStorage.setItem("name",(snapshot.val()).users[uid].name)
@@ -66,9 +58,10 @@
             </div>`
         });
         
+
+        // Getting the available workshops from firebase
         var shop = "shop";
         var num = 0; 
-
         var query = firebase.database().ref("shopList").orderByKey();
         query.once("value")
           .then(function(snapshot) {

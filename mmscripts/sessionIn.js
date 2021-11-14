@@ -1,3 +1,5 @@
+// This file ensures that users who are not logged in are enable to access the features of the website such as dashboard etc.
+
 var uid = sessionStorage.getItem("uid")
 
 if (uid != null) {

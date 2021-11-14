@@ -1,3 +1,6 @@
+// This file contains all the codes related to the map APIs as well as workshops, traffic and weather etc.
+
+
 /* Weather Information Section */
 
 var key = "d8ad138bef71d007adaa6bc3ffd863eb";

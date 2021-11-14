@@ -97,9 +97,7 @@ rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5
 
     <script>
       var slider = document.getElementById("myRange");
-      console.log(slider)
       var output = document.getElementById("value");
-      console.log(output)
       output.innerHTML = slider.value;
       slider.oninput = function() {
         output.innerHTML = this.value;

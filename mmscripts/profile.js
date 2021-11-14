@@ -1,3 +1,5 @@
+// This file contains the functions used to update user values in firebase
+
 function updateInfo() {
     var name = document.getElementById("name").value
     var year = document.getElementById("year").value
