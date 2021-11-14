@@ -64,51 +64,55 @@ rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5
     </div>
   </div>
 
-
-    <!-- Map -->
-  <div class="row body">
-      <!-- Weather info section -->
-      <div class="col-12" >
-        <h1 class="w3-xxxlarge w3-text-red"><b>Weather Information</b></h1>
-        <hr style="width:50px;border:5px solid red" class="w3-round">
-        <div class="row">
-            <div class="col-12">
-                <button type="button" id="resetWeatherBtn">&#8634;</button>
-            </div>
-            <div id="result" class="col-12">
-                Weather info goes here
-            </div>
+<div class="w3-container" id="main" style="margin-top:90px">
+  
+      <!-- Map -->
+    <div class="row body" >
+        <!-- Weather info section -->
+        <div class="col-12" >
+          <h1 class="w3-xxxlarge w3-text-red"><b>Weather Information</b></h1>
+          <hr style="width:50px;border:5px solid red" class="w3-round">
+          <div class="row">
+              <div class="col-12">
+                  <button type="button" class="w3-bar-item w3-light-grey w3-button w3-hover-red" id="resetWeatherBtn">&#8634;</button>
+              </div>
+              <div id="result" class="col-12">
+                  Weather info goes here
+              </div>
+          </div>
+          <br>
         </div>
-        <br>
-      </div>   
-
-    
-    <!-- Parking lots info/location -->
-
-  </div>
-      <!-- General map (traffic and car park control) section -->
-  <div class="col-8">
-    <h1 class="w3-xxxlarge w3-text-red"><b>Carparks & Workshops</b></h1>
-    <hr style="width:50px;border:5px solid red" class="w3-round">
-    <div class="my-2">
-        <button type="button" id="getCarParkBtn" class="w3-bar-item w3-light-grey w3-button w3-hover-red" >Get Carparks</button>
-        <button type="button" id="getWorkshopBtn" class="w3-bar-item w3-light-grey w3-button w3-hover-red" >Get Workshops</button>
-        <button type="button" id="getRoute" class="w3-bar-item w3-light-grey w3-button w3-hover-red" >Calculate route</button>
-        <button type="button" id="resetTrafficMapBtn" class="w3-bar-item w3-light-grey w3-button w3-hover-red" >Refresh Map</button>
-        <button type="button" id="trafficToggle" class="w3-bar-item w3-light-grey w3-button w3-hover-red" >Toggle Traffic Layer</button>
-
+  
+  
+      <!-- Parking lots info/location -->
+  
     </div>
-  </div>
-    <div class="row body">
-      <div class="card">
-        <div id="map" style="width:100%; height:450px; margin-top:10px;"></div>
-        <div class="card-body">
-          <div id="display" style="width:100%; height:400px; overflow:auto;"></div>
-        </div>
+        <!-- General map (traffic and car park control) section -->
+    <div class="col-12">
+      <h1 class="w3-xxxlarge w3-text-red"><b>Carparks & Workshops</b></h1>
+      <hr style="width:50px;border:5px solid red" class="w3-round">
+      <div class="my-2">
+
+  
       </div>
-        
-        
     </div>
+      <div class="row body">
+        <div class="card">
+          
+          <div id="map" style="width:100%; height:450px; margin-top:10px;"></div>
+          <div class="card-body">
+            <button type="button" id="getCarParkBtn" class="w3-bar-item w3-light-grey w3-button w3-hover-red" >Get Carparks</button>
+            <button type="button" id="getWorkshopBtn" class="w3-bar-item w3-light-grey w3-button w3-hover-red" >Get Workshops</button>
+            <button type="button" id="getRoute" class="w3-bar-item w3-light-grey w3-button w3-hover-red" >Calculate route</button>
+            <button type="button" id="resetTrafficMapBtn" class="w3-bar-item w3-light-grey w3-button w3-hover-red" >Refresh Map</button>
+            <button type="button" id="trafficToggle" class="w3-bar-item w3-light-grey w3-button w3-hover-red" >Toggle Traffic Layer</button>
+            <div id="display" style="width:100%; height:400px; overflow:auto;"></div>
+          </div>
+        </div>
+  
+  
+      </div>
+</div>
 </div>
 
 </div>

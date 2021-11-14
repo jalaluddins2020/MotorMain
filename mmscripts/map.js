@@ -48,12 +48,14 @@ function getWeatherWithCoordinates(){
         }
     })
     .then(response => {
-        // console.log(response.data);
+        console.log(response.data);
         let obj = response.data;
         let desc = obj.weather[0].description;
         let temp = Math.round(obj.main.temp-273.15, 2);
         let humid = obj.main.humidity;
         let wind = obj.wind.speed;
+
+        desc = desc.charAt(0).toUpperCase() + desc.slice(1)
 
         outputEle.innerHTML = `
         <ol>
