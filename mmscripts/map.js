@@ -3,8 +3,8 @@
 
 /* Weather Information Section */
 
-var key = "d8ad138bef71d007adaa6bc3ffd863eb";
-var googleKey = "AIzaSyBZ8LDprSmp3bGC56bQWkOo9-Y6_9WvXeI";
+var key = "93e5f59aea0bdc45bd71d68bc7847778";
+var googleKey = "AIzaSyCLFDX4pKDPPH-dM9ErRggXD66H9fIUa2g";
 var url = "https://api.openweathermap.org/data/2.5/weather";
 var googleUrl = `https://maps.googleapis.com/maps/api/place/textsearch/json?query=carpark%20near%20me&key=${googleKey}`;
 
@@ -19,8 +19,9 @@ resetWeatherBtn.addEventListener("click", getWeatherWithCoordinates);
 resetTrafficMapBtn.addEventListener("click", initMap);
 
 
+
 function getLocation() {
-    console.log("fired");
+    // console.log("fired");
 
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(showPosition);
@@ -47,7 +48,7 @@ function getWeatherWithCoordinates(){
         }
     })
     .then(response => {
-        console.log(response.data);
+        // console.log(response.data);
         let obj = response.data;
         let desc = obj.weather[0].description;
         let temp = Math.round(obj.main.temp-273.15, 2);
@@ -134,10 +135,16 @@ function getCarpark() {
         }
     } */
 
-        console.log(response.data);
+        // console.log(response.data);
         carparkListObject = response.data;
 
-        outputHTML = "<table border=1>";
+        outputHTML = `<table class="w3-table">
+        <tbody class="w3-bordered">
+            <tr>
+                <th></th>
+                <th scope="row" class="w3-text-red"><b>Carpark</b></th>
+                <th>Address</th>
+        </tr>`;
 
         //console.log(Object.keys(carparkListObject));
 
@@ -148,8 +155,8 @@ function getCarpark() {
             let address = carpark.formatted_address;
             let status = carpark.business_status;
             outputHTML += `<tr>
-                           <td><button type="button" onclick="displayCarParkOnMap(${counter})">Show on map</button></td>
-                           <td>${name}</td>
+                           <td><button type="button" class="w3-bar-item w3-light-grey w3-button w3-hover-red" onclick="displayCarParkOnMap(${counter})">Show on map</button></td>
+                           <td class="w3-text-red"><b>${name}</b></td>
                            <td>${address}</td></tr>`;
             counter += 1;
 
@@ -187,7 +194,7 @@ function displayCarParkOnMap(index){
     carParkLon = carParkCoordinate.lng;
     carParkLat = carParkCoordinate.lat;
 
-    console.log(carParkCoordinate);
+    // console.log(carParkCoordinate);
 
     carParkInfo = carParkInformationList[index];
     carParkName = carParkInfo[0];
@@ -221,7 +228,7 @@ function initMapCarPark() {
         title: "Car Park Information",
     });
 
-    console.log(carParkName);
+    // console.log(carParkName);
 
     const infoWindow = new google.maps.InfoWindow({
         content: `<h2>${carParkName}</h2>
@@ -288,9 +295,10 @@ function getWorkshops() {
     var shop = "shop";
     var num = 0;
     var infoMain = document.getElementById("display")
-    var output = `<table class="w3-table" style="width:450px; height:400px; overflow:auto;">
+    var output = `<table class="w3-table">
             <tbody class="w3-bordered">
             <tr>
+                <th></th>
                 <th scope="row" class="w3-text-red"><b>Shop</b></th>
                 <th>Address</th>
         </tr>`
@@ -302,7 +310,7 @@ function getWorkshops() {
             var lat = shop[2].slice(1).split(",")[0]
             var long = shop[2].slice(1).split(",")[1].slice(1);
             output += `<tr>
-            <td><button type="button" onclick="displayWorkshopOnMap(${lat}, ${long})">Show on map</button></td>
+            <td><button type="button" class="w3-bar-item w3-light-grey w3-button w3-hover-red" onclick="displayWorkshopOnMap(${lat}, ${long})">Show on map</button></td>
             <th scope="row" class="w3-text-red"><b>`+ name +`</b></th>
             <th>`+ address +`</th>
             </tr>`;
@@ -315,7 +323,7 @@ function getWorkshops() {
     infoMain.innerHTML = output
 }
 function displayWorkshopOnMap(lat, long){
-    console.log(lat, long)
+    // console.log(lat, long)
     /* displayCarParkOnMapEle.style.display = "block"; */
 
     workshopLon = long;
