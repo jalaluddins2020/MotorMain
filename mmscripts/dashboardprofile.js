@@ -207,45 +207,58 @@ Vue.createApp({
         return Number(this.bikeInfo.eoMile) + Number(toAdd)
       },
       nextEoDate(){
-        var eoNext = 3 // service in 3 months time
-        var dateArray = this.bikeInfo.eoDate.split("/")
-        var convertedDate = dateArray[1] + "/" + dateArray[0] + "/" + dateArray[2]
-        var dateObj = new Date(convertedDate)
-        dateObj.setMonth(dateObj.getMonth() + eoNext)
-        var dd = String(dateObj.getDate()).padStart(2,0)
-        var mm = String(dateObj.getMonth() + 1).padStart(2,0)
-        var yyyy = dateObj.getFullYear()
-        return (dd+"/"+mm+"/"+yyyy)
+        if (sessionStorage.getItem("eoDate") == "") {
+            return "Pls Update"
+        }
+        else {
+            var eoNext = 3 // service in 3 months time
+            var dateArray = this.bikeInfo.eoDate.split("/")
+            var convertedDate = dateArray[1] + "/" + dateArray[0] + "/" + dateArray[2]
+            var dateObj = new Date(convertedDate)
+            dateObj.setMonth(dateObj.getMonth() + eoNext)
+            var dd = String(dateObj.getDate()).padStart(2,0)
+            var mm = String(dateObj.getMonth() + 1).padStart(2,0)
+            var yyyy = dateObj.getFullYear()
+            return (dd+"/"+mm+"/"+yyyy)
+        }
       },
       nextSpMile(){
       var toAdd = sessionStorage.getItem("spChangeMile")
         return Number(this.bikeInfo.spMile) + Number(toAdd)
       },
       nextSpDate(){
-        var spNext = 12 // service in 12 months time
-        var dateArray = this.bikeInfo.spDate.split("/")
-        var convertedDate = dateArray[1] + "/" + dateArray[0] + "/" + dateArray[2]
-        var dateObj = new Date(convertedDate)
-        dateObj.setMonth(dateObj.getMonth() + spNext)
-        var dd = dateObj.getDate()
-        var mm = dateObj.getMonth() + 1
-        var yyyy = dateObj.getFullYear() 
-        return (dd+"/"+mm+"/"+yyyy)
+        if (sessionStorage.getItem("spDate") == "") {
+            return "Pls Update"
+        } else{
+            var spNext = 12 // service in 12 months time
+            var dateArray = this.bikeInfo.spDate.split("/")
+            var convertedDate = dateArray[1] + "/" + dateArray[0] + "/" + dateArray[2]
+            var dateObj = new Date(convertedDate)
+            dateObj.setMonth(dateObj.getMonth() + spNext)
+            var dd = dateObj.getDate()
+            var mm = dateObj.getMonth() + 1
+            var yyyy = dateObj.getFullYear() 
+            return (dd+"/"+mm+"/"+yyyy)
+        }
       },
       nextCMile(){
         var toAdd = sessionStorage.getItem("cChangeMile")
         return Number(this.bikeInfo.cMile) + Number(toAdd)
       },
       nextCDate(){
-          var spNext = 24 // service in 24 months time
-          var dateArray = this.bikeInfo.spDate.split("/")
-          var convertedDate = dateArray[1] + "/" + dateArray[0] + "/" + dateArray[2]
-          var dateObj = new Date(convertedDate)
-          dateObj.setMonth(dateObj.getMonth() + spNext)
-          var dd = dateObj.getDate()
-          var mm = dateObj.getMonth() + 1
-          var yyyy = dateObj.getFullYear() 
-          return (dd+"/"+mm+"/"+yyyy)
+        if (sessionStorage.getItem("cDate") == "") {
+            return "Pls Update"
+        } else{
+            var spNext = 24 // service in 24 months time
+            var dateArray = this.bikeInfo.spDate.split("/")
+            var convertedDate = dateArray[1] + "/" + dateArray[0] + "/" + dateArray[2]
+            var dateObj = new Date(convertedDate)
+            dateObj.setMonth(dateObj.getMonth() + spNext)
+            var dd = dateObj.getDate()
+            var mm = dateObj.getMonth() + 1
+            var yyyy = dateObj.getFullYear() 
+            return (dd+"/"+mm+"/"+yyyy)
+        }
       }
     }
 }).mount('#main')
