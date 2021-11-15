@@ -3,8 +3,8 @@
 
 /* Weather Information Section */
 
-var key = "93e5f59aea0bdc45bd71d68bc7847778";
-var googleKey = "AIzaSyCLFDX4pKDPPH-dM9ErRggXD66H9fIUa2g";
+var key = APIKEYHERE;
+var googleKey = APIKEYHERE;
 var url = "https://api.openweathermap.org/data/2.5/weather";
 var googleUrl = `https://maps.googleapis.com/maps/api/place/textsearch/json?query=carpark%20near%20me&key=${googleKey}`;
 
