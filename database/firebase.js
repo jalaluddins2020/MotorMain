@@ -5,7 +5,7 @@
   // Your web app's Firebase configuration
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
   const firebaseConfig = {
-    apiKey: "AIzaSyDO5olDApwyfXFTakiRtvL1V-xwy4Z4VHk",
+    apiKey: APIKEYHERE,
     authDomain: "motormain-c6aa7.firebaseapp.com",
     databaseURL: "https://motormain-c6aa7-default-rtdb.asia-southeast1.firebasedatabase.app",
     projectId: "motormain-c6aa7",
